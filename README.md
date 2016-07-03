@@ -9,7 +9,5 @@ Idea-L-Center CEO: Marcin Bednarski
 
 
 Created by: Thomas Frost
-
 E-mail: thomasfrost1994@outlook.com
-
 LinkedIn: www.linkedin.com/in/thomasfrost1994
