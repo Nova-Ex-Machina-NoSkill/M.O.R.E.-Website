@@ -1,4 +1,4 @@
-# more
+# M.O.R.E.
 M.O.R.E. - Military, Organization, Research, Economy
 
 Worthy successor to the classic space strategy turn games with 3D galaxy map, turn-based 3D space battles.
