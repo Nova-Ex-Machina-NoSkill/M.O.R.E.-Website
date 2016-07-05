@@ -8,15 +8,13 @@
 		<title>M.O.R.E. - About</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="M.O.R.E. - 4x space strategy game - Military, Organization, Research, Economy" />
 		<meta name="keyword" content="more, game, space, strategy, military, organization, research, economy" />
 		<meta name="author" content="Thomas Frost" />
 		<link rel="icon" type="image/png" href="img/menu/favicon.png" />
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron:900|Armata' type='text/css' />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" type="text/css" />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/main.min.css" type="text/css" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -36,7 +34,7 @@
 					<li><a id="contact-header" href="contact"><img id="contact-header-image" class="ToggleImageOnOff" src="img/menu/contact-off.png" alt="Contact" /></a></li>
 				</ul>
 			</nav>
-			<div id="socials-header">
+			<div id="social-header">
 				<a href="https://www.facebook.com/MoreTheGame" target="_blank"><img class="ToggleImageOnOff" src="img/social/facebook-off.png" alt="Our Facebook Page" /></a>
 				<a href="https://www.twitter.com/MORE_the_game" target="_blank"><img class="ToggleImageOnOff" src="img/social/twitter-off.png" alt="Our Twitter Feed" /></a>
 				<a href="https://www.youtube.com/user/IdeaLCenter" target="_blank"><img class="ToggleImageOnOff" src="img/social/youtube-off.png" alt="Our YouTube Channel" /></a>
@@ -78,10 +76,10 @@
 					<div class="submenu-main">
 						<form id="login-form" action="php/login_user.php" method="POST">
 							<label for="username-email">Username / E-mail</label><br />
-							<input name="username-email" type="text" placeholder="example@more.com" /><br />
+							<input id="username-email" name="username-email" type="text" placeholder="example@more.com" /><br />
 							<label for="password">Password</label><br />
 							<input name="password" type="password" /><br /><br />
-							<input id="login-button" class="submit-button" type="submit" value="SIGN IN" /><br /><br />
+							<input id="login-submit" class="submit-button" type="submit" value="SIGN IN" /><br /><br />
 						</form>
 						<?php
 							CheckIfInfoIsSetAndDisplayInfoOrSpace("login-info");
@@ -155,7 +153,7 @@
 						<li>Live on planets, asteroids, stars</li>
 					</ul>
 				</div>
-				<div class="container"
+				<div class="container">
 					<h3>M.O.R.E. SPACE BATTLES</h3>
 					<ul>
 						<li>Turn Based (tactical) space battles</li>
@@ -190,22 +188,22 @@
 					</ul>
 					<ul>
 						<li id="os">Operating System</li>
-						<li>Windows® XP (latest service pack)<br />
+						<li>Windowsï¿½ XP (latest service pack)<br />
 						A reasonably modern 32-bit or 64-bit Linux environment<br />
-						Mac OS® X 10.7 or better</li>
-						<li>Windows® 7 / 8 / 8.1 /10 <br />
+						Mac OSï¿½ X 10.7 or better</li>
+						<li>Windowsï¿½ 7 / 8 / 8.1 /10 <br />
 						A reasonably modern 32-bit or 64-bit Linux environment<br />
-						Mac OS® X 10.10 or better</li>
+						Mac OSï¿½ X 10.10 or better</li>
 					</ul>
 					<ul>
 						<li id="cpu">Processor (CPU)</li>
-						<li>Intel® Core™ 2 Duo or AMD Athlon™ 64 X2</li>
-						<li>Intel® Core™ i5 or AMD FX Series Processor or better</li>
+						<li>Intelï¿½ Coreï¿½ 2 Duo or AMD Athlonï¿½ 64 X2</li>
+						<li>Intelï¿½ Coreï¿½ i5 or AMD FX Series Processor or better</li>
 					</ul>
 					<ul>
 						<li id="gpu">Graphic Card (GPU)</li>
-						<li>NVIDIA® GeForce® GTS250 or ATI™ Radeon™ HD4850 or better</li>
-						<li>NVIDIA® GeForce® GTX 750 or AMD Radeon™ HD 7790 or better</li>
+						<li>NVIDIAï¿½ GeForceï¿½ GTS250 or ATIï¿½ Radeonï¿½ HD4850 or better</li>
+						<li>NVIDIAï¿½ GeForceï¿½ GTX 750 or AMD Radeonï¿½ HD 7790 or better</li>
 					</ul>
 					<ul>
 						<li>RAM MEMORY</li>
@@ -244,10 +242,7 @@
 				<a id="contact-footer" href="contact"><img id="contact-footer-image" class="ToggleImageOnOff" src="img/menu/contact-off.png" alt="contact" /></a>
 			</div>
 		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="scr/main.min.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

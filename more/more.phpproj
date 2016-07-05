@@ -35,6 +35,7 @@
     <Compile Include="government.php" />
     <Compile Include="index.php" />
     <Compile Include="not-found.php" />
+    <Compile Include="php\Logs.php" />
     <Compile Include="php\MySql.php" />
     <Compile Include="preorder.php" />
     <Compile Include="profile-stats.php" />
@@ -61,7 +62,7 @@
     <Folder Include="img\aside\" />
     <Folder Include="img\donate\" />
     <Folder Include="img\menu\" />
-    <Folder Include="img\socials\" />
+    <Folder Include="img\social\" />
     <Folder Include="img\screenshoots\" />
     <Folder Include="img\news\" />
     <Folder Include="img\orders\" />
@@ -289,12 +290,12 @@
     <Content Include="img\screenshoots\wa3.png" />
     <Content Include="img\screenshoots\wa4.png" />
     <Content Include="img\screenshoots\wa5.png" />
-    <Content Include="img\socials\facebook-off.png" />
-    <Content Include="img\socials\facebook-on.png" />
-    <Content Include="img\socials\twitter-off.png" />
-    <Content Include="img\socials\twitter-on.png" />
-    <Content Include="img\socials\youtube-off.png" />
-    <Content Include="img\socials\youtube-on.png" />
+    <Content Include="img\social\facebook-off.png" />
+    <Content Include="img\social\facebook-on.png" />
+    <Content Include="img\social\twitter-off.png" />
+    <Content Include="img\social\twitter-on.png" />
+    <Content Include="img\social\youtube-off.png" />
+    <Content Include="img\social\youtube-on.png" />
     <Content Include="scr\main.js" />
     <Content Include="vid\arrows\arrow-left.png" />
     <Content Include="vid\arrows\arrow-right.png" />

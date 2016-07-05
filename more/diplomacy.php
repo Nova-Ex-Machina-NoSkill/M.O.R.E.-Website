@@ -8,15 +8,13 @@
 		<title>M.O.R.E. - Diplomacy</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<meta name="description" content="M.O.R.E. - 4x space strategy game - Military, Organization, Research, Economy" />
 		<meta name="keyword" content="more, game, space, strategy, military, organization, research, economy" />
 		<meta name="author" content="Thomas Frost" />
 		<link rel="icon" type="image/png" href="img/menu/favicon.png" />
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron:900|Armata' type='text/css' />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" type="text/css" />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
-		<link rel="stylesheet" href="css/main.min.css" type="text/css" />
+		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
 		<header>
@@ -36,7 +34,7 @@
 					<li><a id="contact-header" href="contact"><img id="contact-header-image" class="ToggleImageOnOff" src="img/menu/contact-off.png" alt="Contact" /></a></li>
 				</ul>
 			</nav>
-			<div id="socials-header">
+			<div id="social-header">
 				<a href="https://www.facebook.com/MoreTheGame" target="_blank"><img class="ToggleImageOnOff" src="img/social/facebook-off.png" alt="Our Facebook Page" /></a>
 				<a href="https://www.twitter.com/MORE_the_game" target="_blank"><img class="ToggleImageOnOff" src="img/social/twitter-off.png" alt="Our Twitter Feed" /></a>
 				<a href="https://www.youtube.com/user/IdeaLCenter" target="_blank"><img class="ToggleImageOnOff" src="img/social/youtube-off.png" alt="Our YouTube Channel" /></a>
@@ -78,10 +76,10 @@
 					<div class="submenu-main">
 						<form id="login-form" action="php/login_user.php" method="POST">
 							<label for="username-email">Username / E-mail</label><br />
-							<input name="username-email" type="text" placeholder="example@more.com" /><br />
+							<input id="username-email" name="username-email" type="text" placeholder="example@more.com" /><br />
 							<label for="password">Password</label><br />
 							<input name="password" type="password" /><br /><br />
-							<input id="login-button" class="submit-button" type="submit" value="SIGN IN" /><br /><br />
+							<input id="login-submit" class="submit-button" type="submit" value="SIGN IN" /><br /><br />
 						</form>
 						<?php
 							CheckIfInfoIsSetAndDisplayInfoOrSpace("login-info");
@@ -100,9 +98,9 @@
 					<img class="left" src="img/screenshoots/dip1.png" alt="screenshoot" />
 					<p>One of the most important factors determining the quality of the game is the intelligence of your computer opponents. Therefore, to create a challenging and diverse AI is a priority for M.O.R.E. developers. Special emphasis will be on diplomacy and military alliances. As you gain hegemony in the galaxy it will become more and more difficult to expand, as other powers will often team up against you to resist your overbearing might. On the other hand if your hegemony is not yet established you may receive a proposal to collaborate against the strongest empire.</p>
 					<img class="right" src="img/screenshoots/dip2.png" alt="screenshoot" />
-					<p>Alliances will offer a wide range of options for cooperation. There will be trade treaties, research treaties, demilitarized zones, embargos and more. It will be possible to designate spheres of influence to avoid future tensions with your ally. All this will be conducted on graphically attractive screenshoots, presenting alien chamber rooms, without large amounts of unpleasant tables. You'll be able to see your opponent’s reaction, hear their voice and read a translated answer.</p>
+					<p>Alliances will offer a wide range of options for cooperation. There will be trade treaties, research treaties, demilitarized zones, embargos and more. It will be possible to designate spheres of influence to avoid future tensions with your ally. All this will be conducted on graphically attractive screenshoots, presenting alien chamber rooms, without large amounts of unpleasant tables. You'll be able to see your opponentï¿½s reaction, hear their voice and read a translated answer.</p>
 					<img class="left" src="img/screenshoots/dip3.png" alt="screenshoot" />
-					<p>In M.O.R.E. you are even able to lend your fleets to your allies for a predetermined period of time. Similarly, your allies will be able to lend fleets to you - letting you control them completely during that period. It will even be possible to lend your fleet in exchange for credits, research points or even star systems, so you can use your fleet as mercenaries. Members of a military alliance will coordinate their actions against a common enemy – your AI allies will inform you about their planned attacks, suggest targets and times of action for you, and even accept your suggestions in this matter.</p>
+					<p>In M.O.R.E. you are even able to lend your fleets to your allies for a predetermined period of time. Similarly, your allies will be able to lend fleets to you - letting you control them completely during that period. It will even be possible to lend your fleet in exchange for credits, research points or even star systems, so you can use your fleet as mercenaries. Members of a military alliance will coordinate their actions against a common enemy ï¿½ your AI allies will inform you about their planned attacks, suggest targets and times of action for you, and even accept your suggestions in this matter.</p>
 					<h1>EXAMPLES OF ALIEN DIPLOMATIC TALKS</h1><br />
 					<img class="right" src="img/screenshoots/dip4.png" alt="screenshoot" />
 					<p>This is most unfortunate considering our admiration for your people Ambassador but the Matriarch cannot see you now.<br /><br />
@@ -131,10 +129,7 @@
 				<a id="contact-footer" href="contact"><img id="contact-footer-image" class="ToggleImageOnOff" src="img/menu/contact-off.png" alt="contact" /></a>
 			</div>
 		</footer>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="scr/main.min.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
