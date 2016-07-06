@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,14 +92,16 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Recover</div>
+			<div id="main-header"><h4>Recover</h4></div>
 			<div id="main-body">
-				<form class="form-center" action="php/recover_password.php" method="POST">
-					<label for="recover-password">Username / E-mail: </label>
-					<input id="recover-password" name="recover-password" type="text" /><br />
-					<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
-					<input id="recover-submit" class="submit-button" type="submit" value="RECOVER" />
-				</form>
+				<div id="container">
+					<form class="form-center" action="php/recover_password.php" method="POST">
+						<label for="recover-password">Username / E-mail: </label>
+						<input id="recover-password" name="recover-password" type="text" /><br />
+						<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
+						<input id="recover-submit" class="submit-button" type="submit" value="RECOVER" />
+					</form>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

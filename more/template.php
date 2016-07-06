@@ -14,15 +14,12 @@
 		<meta name="author" content="Thomas Frost" />
 		<link rel="icon" type="image/png" href="img/menu/favicon.png" />
 		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Orbitron:900|Armata' type='text/css' />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.css" type="text/css" />
-		<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css" type="text/css" />
-		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" type="text/css" />
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -95,9 +92,11 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">M.O.R.E.</div>
+			<div id="main-header"><h4>M.O.R.E.</h4></div>
 			<div id="main-body">
-				
+				<div id="container">
+					
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>
@@ -110,9 +109,6 @@
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 		<script src="scr/main.min.js"></script>
 		<script>

@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,17 +92,19 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Races</div>
+			<div id="main-header"><h4>Races</h4></div>
 			<div id="main-body">
-				<div class="text-images">
-					<img class="left" src="img/screenshoots/rac1.png" alt="screenshoot" />
-					<p>In M.O.R.E., the galaxy is inhabited by no fewer than 20 alien races, each with a unique history and motivation for exploration of space. Players choosing a particular race will get acquainted with the history and current events of the race as they play the game - along with unique buildings, weapons and research opportunities. This is all embedded in an interface specially designed for each race, and atmospheric music thanks to ensure you will feel the ruler of an alien power.</p>
-					<img class="right" src="img/screenshoots/rac2.png" alt="screenshoot" />
-					<p>Players will meet charismatic Terrans, experts at the art of international diplomacy, the orthodox religious fanatics of the Skiteli, the honourable warriors - Brutas, beings for whom the progress of science is the greatest value in the form of the Zientzielari, and other representatives of various science fiction races. However, in our game players will also find races inhabiting the gas giants and liquid planets, collective minuscule insect races - the Myrmecians, the energy-based lifeforms known as the Stjornuri, or a totally unique race of multi-mile creatures living in space - the Hvalur.</p>
-					<img class="left" src="img/screenshoots/rac3.png" alt="screenshoot" />
-					<p>We will try to provide significant innovations in the gameplay without losing the spirit of what makes 4X space games great. For example it will be possible for some races with telepathic abilities to calm, or even to tame space monsters. After discovering suitable technologies it will be possible to breed some types of those giant space animals and use them in combat. Each race will also have unique research options only available to it, opening up new strategies for each game that will keep you coming back for one more turn.</p>
-					<img class="right" src="img/screenshoots/rac4.png" alt="screenshoot" />
-					<p>Many aspects of alien races - their culture, history, origin, religion, society, way of living and thinking will be described in our in-game Omnipedia. This will be a great source of knowledge about races, and allow players to deeply delve into their chosen race. Details like description of food they eat and the gods they believe in will take players fully into the M.O.R.E. universe.</p>
+				<div id="container">
+					<div class="text-images">
+						<img class="left" src="img/screenshoots/rac1.png" alt="screenshoot" />
+						<p>In M.O.R.E., the galaxy is inhabited by no fewer than 20 alien races, each with a unique history and motivation for exploration of space. Players choosing a particular race will get acquainted with the history and current events of the race as they play the game - along with unique buildings, weapons and research opportunities. This is all embedded in an interface specially designed for each race, and atmospheric music thanks to ensure you will feel the ruler of an alien power.</p>
+						<img class="right" src="img/screenshoots/rac2.png" alt="screenshoot" />
+						<p>Players will meet charismatic Terrans, experts at the art of international diplomacy, the orthodox religious fanatics of the Skiteli, the honourable warriors - Brutas, beings for whom the progress of science is the greatest value in the form of the Zientzielari, and other representatives of various science fiction races. However, in our game players will also find races inhabiting the gas giants and liquid planets, collective minuscule insect races - the Myrmecians, the energy-based lifeforms known as the Stjornuri, or a totally unique race of multi-mile creatures living in space - the Hvalur.</p>
+						<img class="left" src="img/screenshoots/rac3.png" alt="screenshoot" />
+						<p>We will try to provide significant innovations in the gameplay without losing the spirit of what makes 4X space games great. For example it will be possible for some races with telepathic abilities to calm, or even to tame space monsters. After discovering suitable technologies it will be possible to breed some types of those giant space animals and use them in combat. Each race will also have unique research options only available to it, opening up new strategies for each game that will keep you coming back for one more turn.</p>
+						<img class="right" src="img/screenshoots/rac4.png" alt="screenshoot" />
+						<p>Many aspects of alien races - their culture, history, origin, religion, society, way of living and thinking will be described in our in-game Omnipedia. This will be a great source of knowledge about races, and allow players to deeply delve into their chosen race. Details like description of food they eat and the gods they believe in will take players fully into the M.O.R.E. universe.</p>
+					</div>
 					<h1>FIRST ENCOUNTER WITH HVALURS</h1>
 					<p class="no-image">This is a transcript of the messages exchanged between Terran commercial freighter and control tower near a mining operation in the Kuiper belt following the first encounter with Hvalurs scout:</p>
 					<ul>
@@ -121,7 +123,7 @@
 						<li>P: It's organic! The scan results are all over the place! The object is now about 45 kilcks from our position and stationary, I think we better report this to the...</li>
 						<li>C: 'Sulaco' what's your status? Over.</li>
 						<li>P: It started emitting light! Flashes of different frequency and across the entire spectrum! Central we are out of here! Better get the old man on the horn to the Command asap!</li>
-					</ul>
+					</ul><br />
 				</div>
 			</div>
 			<div id="main-footer"></div>

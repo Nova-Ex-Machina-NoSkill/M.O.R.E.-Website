@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,26 +92,28 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Galaxy</div>
+			<div id="main-header"><h4>Galaxy</h4></div>
 			<div id="main-body">
-				<div class="text-images">
-					<img class="left" src="img/screens/gal1.png" alt="screenshot" />
-					<p>The galactic map can be generated using a variety of highly customisable settings, including: the type (elliptical, lenticular, irregular, spiral, spiral with a bar), size, thickness, age of the galaxy, and many others.In addition, the appearance of the galaxy - and thus strategy used in the game - is affected by many other configurable factors such as the presence and size of galactic black holes, wormhole settings, distance between star systems, and more...</p>
-					<img class="right" src="img/screens/gal2.png" alt="screenshot" />
-					<p>The number of star systems varies from 50 star systems in a tiny galaxy, through 200 star systems in a medium galaxy, up to 800 star systems in a large galaxy. If you are hardcore fan of long games and have a powerful computer, we've also prepared huge galaxies with 1600 star systems! And a vast galaxy type with 3200 star systems!</p>
-					<h2>Galaxy map contains elements such as:</h2>
-					<ul>
-						<li>stellar systems consisting of single, double and triple stars!</li>
-						<li>stars of different sizes (5 types) and color (9 types)</li>
-						<li>80 kinds of planets, divided into four main types: solid, tectonic, liquid, gas</li>
-						<li>four types of nebulae, all with unique gameplay effects: dark, reflective, emissive and planetary</li>
-						<li>black holes, pulsars, asteroid belts, moons</li>
-						<li>wormholes, one or two-way, with both unstable and stabilized exit points</li>
-						<li>a supermassive black hole at the center of the galaxy</li>
-						<li>products of advanced civilizations such as Dyson spheres</li>
-					</ul><br />
-					<img class="left" src="img/screens/gal3.png" alt="screenshot" />
-					<p>In addition, galaxy maps have an option to use a detailed information overlay, which allows the player to review more in-depth information at a glance.<br /><br />Finally, M.O.R.E. will not seek to limit where players can send their ships: with no starlines and the like providing artificial choke points, the options available to players will be greatly enhanced.</p><br />
+				<div id="container">
+					<div class="text-images">
+						<img class="left" src="img/screenshoots/gal1.png" alt="screenshot" />
+						<p>The galactic map can be generated using a variety of highly customisable settings, including: the type (elliptical, lenticular, irregular, spiral, spiral with a bar), size, thickness, age of the galaxy, and many others.In addition, the appearance of the galaxy - and thus strategy used in the game - is affected by many other configurable factors such as the presence and size of galactic black holes, wormhole settings, distance between star systems, and more...</p>
+						<img class="right" src="img/screenshoots/gal2.png" alt="screenshot" />
+						<p>The number of star systems varies from 50 star systems in a tiny galaxy, through 200 star systems in a medium galaxy, up to 800 star systems in a large galaxy. If you are hardcore fan of long games and have a powerful computer, we've also prepared huge galaxies with 1600 star systems! And a vast galaxy type with 3200 star systems!</p>
+						<h2>Galaxy map contains elements such as:</h2>
+						<ul>
+							<li>stellar systems consisting of single, double and triple stars!</li>
+							<li>stars of different sizes (5 types) and color (9 types)</li>
+							<li>80 kinds of planets, divided into four main types: solid, tectonic, liquid, gas</li>
+							<li>four types of nebulae, all with unique gameplay effects: dark, reflective, emissive and planetary</li>
+							<li>black holes, pulsars, asteroid belts, moons</li>
+							<li>wormholes, one or two-way, with both unstable and stabilized exit points</li>
+							<li>a supermassive black hole at the center of the galaxy</li>
+							<li>products of advanced civilizations such as Dyson spheres</li>
+						</ul><br />
+						<img class="left" src="img/screenshoots/gal3.png" alt="screenshot" />
+						<p>In addition, galaxy maps have an option to use a detailed information overlay, which allows the player to review more in-depth information at a glance.<br /><br />Finally, M.O.R.E. will not seek to limit where players can send their ships: with no starlines and the like providing artificial choke points, the options available to players will be greatly enhanced.</p><br />
+					</div>
 				</div>
 			</div>
 			<div id="main-footer"></div>

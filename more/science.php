@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,26 +92,29 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Science</div>
+			<div id="main-header"><h4>Science</h4></div>
 			<div id="main-body">
-				<div class="text-images">
-					<img class="left" src="img/screens/sci1.png" alt="screenshot" />
-					<p>We know how important it is for a game to have interesting inventions, and how hard is to choose the best quantity and quality of them. Their numbers can't be too low - because it will limit players' possibilities. Their numbers can't be too high - because players will be lost in tons of inventions which aren't different from each other. That's why we've put a great attention to science and which inventions which are placed in our game. Science in M.O.R.E. is divided into 7 main branches and a race branch, each with 10 technological eras to advance through.</p>
-					<p class="no-image">Those branches are</p>
-					<ul>
-						<li>Biology</li>
-						<li>Chemistry</li>
-						<li>Sociology</li>
-						<li>Energy</li>
-						<li>Physics</li>
-						<li>Engineering</li>
-						<li>Computers</li>
-						<li>Race branch - which is different for every single race from the M.O.R.E. universe!</li>
-					</ul><br />
-					<img class="right" src="img/screens/sci2.png" alt="screenshot" />
-					<p>Every branch has an average of 4 inventions so it gives around 300 inventions which will be available to every race, and around 20 inventions which will be unique to each race. This means a total of 400 additional inventions which will boost the re-playability of M.O.R.E. It also won't be so easy to move on to the next era, so it will be possible that some games will end before reaching end of the technology tree.</p><br />
+				<div id="container">
+					<div class="text-images">
+						<img class="left" src="img/screenshoots/sci1.png" alt="screenshot" />
+						<p>We know how important it is for a game to have interesting inventions, and how hard is to choose the best quantity and quality of them. Their numbers can't be too low - because it will limit players' possibilities. Their numbers can't be too high - because players will be lost in tons of inventions which aren't different from each other. That's why we've put a great attention to science and which inventions which are placed in our game. Science in M.O.R.E. is divided into 7 main branches and a race branch, each with 10 technological eras to advance through.</p>
+					</div>
+						<p class="no-image">Those branches are</p>
+						<ul>
+							<li>Biology</li>
+							<li>Chemistry</li>
+							<li>Sociology</li>
+							<li>Energy</li>
+							<li>Physics</li>
+							<li>Engineering</li>
+							<li>Computers</li>
+							<li>Race branch - which is different for every single race from the M.O.R.E. universe!</li>
+						</ul><br />
+					<div class="text-images">
+						<img class="right" src="img/screenshoots/sci2.png" alt="screenshot" />
+						<p>Every branch has an average of 4 inventions so it gives around 300 inventions which will be available to every race, and around 20 inventions which will be unique to each race. This means a total of 400 additional inventions which will boost the re-playability of M.O.R.E. It also won't be so easy to move on to the next era, so it will be possible that some games will end before reaching end of the technology tree.</p><br />
+					</div>
 				</div>
-			</div>
 			<div id="main-footer"></div>
 		</main>
 		<footer>

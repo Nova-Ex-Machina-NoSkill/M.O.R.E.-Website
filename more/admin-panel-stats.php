@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,11 +92,13 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Stats</div>
+			<div id="main-header"><h4>Stats</h4></div>
 			<div id="main-body">
-				<?php
-					ShowUserStats($_GET['id']);
-				?>
+				<div id="container">
+					<?php
+						//ShowUserStats($_GET['id']);
+					?>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

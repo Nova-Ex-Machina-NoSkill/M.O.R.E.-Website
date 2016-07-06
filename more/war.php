@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,21 +92,23 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">War</div>
+			<div id="main-header"><h4>War</h4></div>
 			<div id="main-body">
-				<div class="text-images">
-					<h2>Space battles</h2><br />
-					<img class="left" src="img/screens/wa1.png" alt="screenshot" />
-					<p>Unlike most 4X games, M.O.R.E.'s turn-based space battles promise to be in a fully 3D environment. The result of this will be visually spectacular space battles featuring various types of ship classes, over which the player has full control. Plenty of deadly rays, missiles, fighter planes and many other types of weapons and attacks ensures that each battle will be different.</p>				
-					<img class="left" src="img/screens/wa2.png" alt="screenshot" />
-					<p>In M.O.R.E. you'll be able to take command of starships constructed by yourself using over 50 different spaceship modules for every race! This results in over 1,000 spaceship parts which you would be able to use on the battlefield. Such a large diversity of spaceship designs and different tactics, customized for 20 alien races, results in great battles.</p>
-					<img class="left" src="img/screens/wa3.png" alt="screenshot" />
-					<p>Turn based combat on fully 3D battlefield, filled with majestic moving of 11 classes of spaceships, starbases and fighters. All these have plenty of attack options like ramming, boarding or self-destruction, calling in reinforcements and other battle features will result in beautiful space battles.</p><br />
-					<h2>Ground battles</h2><br />
-					<img class="right" src="img/screens/wa4.png" alt="screenshot" />
-					<p>With the enemy fleet destroyed and the orbital defences in ruins, the option of attacking their worlds is opened up. Do you invade their world with massed ground forces, or do you blast their cities into ruin from space? Do you attempt to conquer bloodlessly with telepaths, or risk outrage by deploying bioweapons?</p>
-					<img class="right" src="img/screens/wa5.png" alt="screenshot" />
-					<p>With space stations, planets, moons, asteroid belts, and nebulas potentially influencing the course of space battles, you will get the most comprehensive battlefield simulator ever seen in the 4X genre.</p><br />
+				<div id="container">
+					<div class="text-images">
+						<h2>Space battles</h2><br />
+						<img class="left" src="img/screenshoots/wa1.png" alt="screenshot" />
+						<p>Unlike most 4X games, M.O.R.E.'s turn-based space battles promise to be in a fully 3D environment. The result of this will be visually spectacular space battles featuring various types of ship classes, over which the player has full control. Plenty of deadly rays, missiles, fighter planes and many other types of weapons and attacks ensures that each battle will be different.</p>				
+						<img class="left" src="img/screenshoots/wa2.png" alt="screenshot" />
+						<p>In M.O.R.E. you'll be able to take command of starships constructed by yourself using over 50 different spaceship modules for every race! This results in over 1,000 spaceship parts which you would be able to use on the battlefield. Such a large diversity of spaceship designs and different tactics, customized for 20 alien races, results in great battles.</p>
+						<img class="left" src="img/screenshoots/wa3.png" alt="screenshot" />
+						<p>Turn based combat on fully 3D battlefield, filled with majestic moving of 11 classes of spaceships, starbases and fighters. All these have plenty of attack options like ramming, boarding or self-destruction, calling in reinforcements and other battle features will result in beautiful space battles.</p><br />
+						<h2>Ground battles</h2><br />
+						<img class="right" src="img/screenshoots/wa4.png" alt="screenshot" />
+						<p>With the enemy fleet destroyed and the orbital defences in ruins, the option of attacking their worlds is opened up. Do you invade their world with massed ground forces, or do you blast their cities into ruin from space? Do you attempt to conquer bloodlessly with telepaths, or risk outrage by deploying bioweapons?</p>
+						<img class="right" src="img/screenshoots/wa5.png" alt="screenshot" />
+						<p>With space stations, planets, moons, asteroid belts, and nebulas potentially influencing the course of space battles, you will get the most comprehensive battlefield simulator ever seen in the 4X genre.</p><br />
+					</div>
 				</div>
 			</div>
 			<div id="main-footer"></div>

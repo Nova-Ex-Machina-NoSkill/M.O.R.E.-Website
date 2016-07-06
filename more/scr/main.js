@@ -30,7 +30,7 @@ function Initiate() {
 }
 
 function SetToggle() {
-    var x = document.getElementsByClassName("Toggle");
+    var x = document.getElementsByClassName("ToggleImageOnOff");
     for (var i = 0; i < x.length; i++) {
         x[i].addEventListener("mouseover", ToggleOn);
         x[i].addEventListener("mouseout", ToggleOff);
@@ -46,7 +46,7 @@ function ToggleOff(x) {
 }
 
 function SetToggleSubMenu() {
-    var x = document.getElementsByClassName("ToggleSubMenu");
+    var x = document.getElementsByClassName("ToggleSubMenuOnOff");
     for (var i = 0; i < x.length; i++) {
         $(x[i]).on("click", function (event) {
             event.preventDefault();

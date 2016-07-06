@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,13 +92,15 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Government</div>
+			<div id="main-header"><h4>Government</h4></div>
 			<div id="main-body">
-				<div class="text-images">
-					<img class="left" src="img/screens/gov1.png" alt="screenshot" />
-					<p>Management of your vast empire will be possible through an innovative approach unseen in other games of the genre. We will not rely on the automation of processes, which in time reduces gameplay to merely clicking the next turn button. Instead you will be able to discover and develop technologies assisting in management. As your empire grows and science progresses, you will be able to create building queues, and merge colonies of one star system into a super-colony called a Dyson Sphere. After further expansions and scientific developments, it will become possible even for these super-colonies (if they are close to each other) to be merged into clusters managed as one entity. Such clusters will have enormous industrial and scientific potential and will ensure that, no matter the scale of the game you're playing, every turn presents you with something to do without becoming bogged down in micromanagement.</p>
-					<img class="right" src="img/screens/gov2.png" alt="screenshot" />
-					<p>M.O.R.E. will also pay special attention to such gaming aspects as mineral extraction, food transportation, raw materials, and people. It will contain leaders of the colonies, ship captains, spy masters, diplomats and scientists who will all have a significant impact on the course of the game, bringing into it their own stories, motivation and problems.</p><br />
+				<div id="container">
+					<div class="text-images">
+						<img class="left" src="img/screenshoots/gov1.png" alt="screenshot" />
+						<p>Management of your vast empire will be possible through an innovative approach unseen in other games of the genre. We will not rely on the automation of processes, which in time reduces gameplay to merely clicking the next turn button. Instead you will be able to discover and develop technologies assisting in management. As your empire grows and science progresses, you will be able to create building queues, and merge colonies of one star system into a super-colony called a Dyson Sphere. After further expansions and scientific developments, it will become possible even for these super-colonies (if they are close to each other) to be merged into clusters managed as one entity. Such clusters will have enormous industrial and scientific potential and will ensure that, no matter the scale of the game you're playing, every turn presents you with something to do without becoming bogged down in micromanagement.</p><br />
+						<img class="right" src="img/screenshoots/gov2.png" alt="screenshot" />
+						<p>M.O.R.E. will also pay special attention to such gaming aspects as mineral extraction, food transportation, raw materials, and people. It will contain leaders of the colonies, ship captains, spy masters, diplomats and scientists who will all have a significant impact on the course of the game, bringing into it their own stories, motivation and problems.</p><br />
+					</div>
 				</div>
 			</div>
 			<div id="main-footer"></div>

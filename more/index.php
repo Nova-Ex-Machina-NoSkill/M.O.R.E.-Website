@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,29 +92,27 @@
 			</div>
 		</header>
 		<main>
-			<div id="container">
-				<video id="main-trailer" autoplay="autoplay" loop="loop" muted="muted">
-					<source src="vid/more-trailer.mp4" type="video/mp4" />
-					Your browser does not support the HTML 5.
-				</video>
-				<aside id="cs">
-					<h1>CURRENT STATUS</h1>
-					<h2>PRE-ALPHA</h2>
-					<img src="img/news/actual.png" alt="status" />
-					<ul>
-						<li>Playing/Testing SP game mechanic</li>
-						<li>Preparing MP network layer</li>
-					</ul>
-					<a href="preorder"><h3>PRE-ORDER</h3></a>
-				</aside>
-				<aside id="do">
-					<h1>CREATED BY PLAYERS</h1>
-					<p>Our game is created thanks to the support of people who want to get a new generation of 4X space strategy game.<br />
-					We want to stay independent, so we appreciate any donation you can make. Thank you.</p>
-					<a href="donate"><img class="ToggleImageOnOff" src="img/menu/kickstarter-off.png" alt="donate" /></a>
-					<a href="donate"><h2>DONATE</h2></a>
-				</aside>
-			</div>
+			<video id="main-trailer" autoplay="autoplay" loop="loop" muted="muted">
+				<source src="vid/more-trailer.mp4" type="video/mp4" />
+				Your browser does not support the HTML 5.
+			</video>
+			<aside id="cs">
+				<h1>CURRENT STATUS</h1>
+				<h2>PRE-ALPHA</h2>
+				<img src="img/news/actual.png" alt="status" />
+				<ul>
+					<li>Playing/Testing SP game mechanic</li>
+					<li>Preparing MP network layer</li>
+				</ul>
+				<a href="preorder"><h3>PRE-ORDER</h3></a>
+			</aside>
+			<aside id="do">
+				<h1>CREATED BY PLAYERS</h1>
+				<p>Our game is created thanks to the support of people who want to get a new generation of 4X space strategy game.<br />
+				We want to stay independent, so we appreciate any donation you can make. Thank you.</p>
+				<a href="donate"><img class="ToggleImageOnOff" src="img/menu/kickstarter-off.png" alt="donate" /></a>
+				<a href="donate"><h2>DONATE</h2></a>
+			</aside>
 		</main>
 		<footer>
 			<div id="social-footer">
@@ -123,7 +121,7 @@
 				<a href="https://www.youtube.com/user/IdeaLCenter" target="_blank"><img class="ToggleImageOnOff" src="img/social/youtube-off.png" alt="Our YouTube Channel" /></a><br />
 				<a id="contact-footer" href="contact"><img id="contact-footer-image" class="ToggleImageOnOff" src="img/menu/contact-off.png" alt="contact" /></a>
 			</div>
-			<img id="mute-button" class="ToggleImageOnOff" src="img/menu/soundoff-off.png" alt="Mute Button" onclick="ToggleMute" />
+			<img id="mute-button" class="ToggleImageOnOff" src="img/menu/soundoff-off.png" alt="Mute Button" onclick="ToggleMute()" />
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="scr/main.min.js"></script>

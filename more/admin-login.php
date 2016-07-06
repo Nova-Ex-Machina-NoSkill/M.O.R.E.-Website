@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,18 +92,20 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Admin Login</div>
+			<div id="main-header"><h4>Admin Login</h4></div>
 			<div id="main-body">
-				<form class="form-center" action="php/login_admin.php" method="POST">
-					<label for="admin-username">Username: </label>
-					<input id="admin-username" name="admin-username" type="text" /><br />
-					<label for="admin-password">Password: </label>
-					<input id="admin-password" name="admin-password" type="password" /><br />
-					<input id="admin-submit" class="submit-button" type="submit" value="SIGN IN" />
-				</form><br /><br />
-				<?php
-					CheckIfInfoIsSetAndDisplayInfoOrSpace("admin-login-info");
-				?>
+				<div id="container">
+					<form class="form-center" action="php/login_admin.php" method="POST">
+						<label for="admin-username">Username: </label>
+						<input id="admin-username" name="admin-username" type="text" /><br />
+						<label for="admin-password">Password: </label>
+						<input id="admin-password" name="admin-password" type="password" /><br />
+						<input id="admin-submit" class="submit-button" type="submit" value="SIGN IN" />
+					</form><br /><br />
+					<?php
+						CheckIfInfoIsSetAndDisplayInfoOrSpace("admin-login-info");
+					?>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

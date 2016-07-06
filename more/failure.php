@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,10 +92,12 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Failure</div>
+			<div id="main-header"><h4>Failure</h4></div>
 			<div id="main-body">
-				<h2>There was some errors while processing your PayPal request.</h2><br />
-				<p>Try again later, or if this does not help, please <a class="favlink" href="contact">contact</a> us!</p><br />
+				<div id="container">
+					<h2>There was some errors while processing your PayPal request.</h2><br />
+					<p>Try again later, or if this does not help, please <a class="favlink" href="contact">contact</a> us!</p><br />
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

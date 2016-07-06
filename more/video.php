@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,13 +92,11 @@
 			</div>
 		</header>
 		<main>
-			<div id="container">
-				<img id="slider-background" src="img/menu/background.png" alt="background" />
-				<div id="video-container"></div>
-				<img id="left-arrow" src="img/vid/arrows/arrow-left.png" alt="arrow left" />
-				<img id="right-arrow" src="img/vid/arrows/arrow-right.png" alt="arrow right" />
-				<div id="miniature-container"><</div>
-			</div>
+			<img id="slider-background" src="img/menu/background.png" alt="background" />
+			<div id="video-container"></div>
+			<img id="left-arrow" src="vid/arrows/arrow-left.png" alt="arrow left" />
+			<img id="right-arrow" src="vid/arrows/arrow-right.png" alt="arrow right" />
+			<div id="miniature-container"><</div>
 		</main>
 		<footer>
 			<div id="social-footer">
@@ -109,7 +107,7 @@
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
 		<script src="scr/main.min.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

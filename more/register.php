@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,25 +92,27 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Register</div>
+			<div id="main-header"><h4>Register</h4></div>
 			<div id="main-body">
-				<form class="center-form" action="php/register_user.php" method="POST">
-					<label for="register-username">Username: </label>
-					<input id="register-username" name="register-username" type="text" /><br />
-					<label for="register-email">E-Mail: </label>
-					<input id="register-email" name="register-email" type="email" /><br />
-					<div id="right-container">
-						<label for="register-password">Password: </label>
-						<input id="register-password" name="register-password" type="password" /><br />
-						<label for="register-password-repeat">Repeat Password: </label>
-						<input id="register-password-repeat" name="register-password-repeat" type="password" /><br />
-					</div>
-					<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
-					<input id="register-submit" class="submit-button" type="submit" value="REGISTER" />
-				</form>
-				<?php
-					CheckIfInfoIsSetAndDisplayInfoOrSpace("register-info");
-				?>
+				<div id="container">
+					<form class="center-form" action="php/register_user.php" method="POST">
+						<label for="register-username">Username: </label>
+						<input id="register-username" name="register-username" type="text" /><br />
+						<label for="register-email">E-Mail: </label>
+						<input id="register-email" name="register-email" type="email" /><br />
+						<div id="right-container">
+							<label for="register-password">Password: </label>
+							<input id="register-password" name="register-password" type="password" /><br />
+							<label for="register-password-repeat">Repeat Password: </label>
+							<input id="register-password-repeat" name="register-password-repeat" type="password" /><br />
+						</div>
+						<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
+						<input id="register-submit" class="submit-button" type="submit" value="REGISTER" />
+					</form>
+					<?php
+						CheckIfInfoIsSetAndDisplayInfoOrSpace("register-info");
+					?>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

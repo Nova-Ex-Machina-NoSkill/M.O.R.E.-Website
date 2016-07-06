@@ -31,6 +31,8 @@
 	define("CHECK_USERNAME", "SELECT id FROM users WHERE username = ? LIMIT 1");
 	define("CHECK_EMAIL", "SELECT id FROM users WHERE email = ? LIMIT 1");
 	define("CHECK_USERNAME_EMAIL", "SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1");
+	define("CHECK_USER_PASSWORD", "SELECT password FROM users WHERE id = ? LIMIT 1");
+	define("CHECK_ADMIN_PASSWORD", "SELECT password FROM admins WHERE id = ? LIMIT 1");
 
 	// USER GET
 	define("GET_USER", "SELECT username, email, created, logged, verified, banned FROM users WHERE id = ? LIMIT 1");
@@ -68,7 +70,7 @@
 	define("UPDATE_USER_ADDRESS", "UPDATE users_address SET first_name, last_name, birth, country, state, city, postal, street, apartment WHERE id = ?");
 	define("UPDATE_USER_SHIPPING", "UPDATE users_shipping SET first_name, last_name, country, state, city, postal, street, apartment WHERE id = ?");
 	define("UPDATE_USER_SUPPORT", "UPDATE users_support SET level = ?, game = ?, orders = ? WHERE id = ?");
-	define("UPDATE_USER_SEARCH", "UPDATE users_stats SET id = ? WHERE id = ?");
+	define("UPDATE_USER_STATS", "UPDATE users_stats SET id = ? WHERE id = ?");
 
 	// USER REGISTER
 	define("REGISTER_USER", "INSERT INTO users (username, email, password, salt, created, logged, verified) VALUES (?, ?, ?, ?, ?, ?, ?)");

@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,10 +92,12 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Success</div>
+			<div id="main-header"><h4>Success</h4></div>
 			<div id="main-body">
-				<h2>Your PayPal order has been confirmed!</h2><br />
-				<p>You will receive an confirmation e-mail within 48 hours.</p><br />
+				<div id="container">
+					<h2>Your PayPal order has been confirmed!</h2><br />
+					<p>You will receive an confirmation e-mail within 48 hours.</p><br />
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

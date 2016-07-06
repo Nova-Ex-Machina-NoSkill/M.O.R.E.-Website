@@ -35,8 +35,10 @@
     <Compile Include="government.php" />
     <Compile Include="index.php" />
     <Compile Include="not-found.php" />
+    <Compile Include="php\Database.php" />
     <Compile Include="php\Logs.php" />
     <Compile Include="php\MySql.php" />
+    <Compile Include="php\Session.php" />
     <Compile Include="preorder.php" />
     <Compile Include="profile-stats.php" />
     <Compile Include="profile-support.php" />
@@ -79,6 +81,7 @@
   <ItemGroup>
     <Content Include=".htaccess" />
     <Content Include="css\main.css" />
+    <Content Include="css\main.min.css" />
     <Content Include="gallery\arrows\arrow-left.png" />
     <Content Include="gallery\arrows\arrow-right.png" />
     <Content Include="gallery\more1.png" />
@@ -297,6 +300,7 @@
     <Content Include="img\social\youtube-off.png" />
     <Content Include="img\social\youtube-on.png" />
     <Content Include="scr\main.js" />
+    <Content Include="scr\main.min.js" />
     <Content Include="vid\arrows\arrow-left.png" />
     <Content Include="vid\arrows\arrow-right.png" />
     <Content Include="vid\more-trailer.mp4" />

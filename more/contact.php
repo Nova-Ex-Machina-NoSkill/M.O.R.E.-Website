@@ -19,7 +19,7 @@
 	<body>
 		<header>
 			<div id="cookies">
-				<img class="float-right" onclick="AllowCookies" src="img/menu/exit.png" alt="exit" />
+				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
 				<p>We use cookies to enhance your experience.<br />By continuing to visit this site you agree to our use of cookies.</p>
 			</div>
 			<div id="logo">
@@ -92,23 +92,25 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header">Contact</div>
+			<div id="main-header"><h4>Contact</h4></div>
 			<div id="main-body">
-				<h1>Need help?</h1><br />
-				<p>If you have any questions about our game, website, or simply want to contact with us, you can use this form below. We will do what we can do answer you in next 48 hours!</p><br />
-				<form class="form-center" action="php/send_email.php" method="POST">
-					<label for="contact-name">Name: </label>
-					<input id="contact-name" name="contact-name" type="text" /><br />
-					<label for="contact-email">E-mail: </label>
-					<input id="contact-email" name="contact-email" type="email" /><br />
-					<label for="contact-comment">Comment: </label><br />
-					<textarea id="contact-comment" name="contact-comment" rows="5" cols="80" maxlength="256" placeholder="Your comment..."></textarea><br />
-					<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
-					<input id="contact-submit" class="submit-button" type="submit" value="SEND" />
-				</form>
-				<?php
-					CheckIfInfoIsSetAndDisplayInfoOrSpace("contact-info");
-				?>
+				<div id="container">
+					<h1>Need help?</h1><br />
+					<p>If you have any questions about our game, website, or simply want to contact with us, you can use this form below. We will do what we can do answer you in next 48 hours!</p><br />
+					<form class="form-center" action="php/send_email.php" method="POST">
+						<label for="contact-name">Name: </label>
+						<input id="contact-name" name="contact-name" type="text" /><br />
+						<label for="contact-email">E-mail: </label>
+						<input id="contact-email" name="contact-email" type="email" /><br />
+						<label for="contact-comment">Comment: </label><br />
+						<textarea id="contact-comment" name="contact-comment" rows="5" cols="80" maxlength="256" placeholder="Your comment..."></textarea><br />
+						<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
+						<input id="contact-submit" class="submit-button" type="submit" value="SEND" />
+					</form>
+					<?php
+						CheckIfInfoIsSetAndDisplayInfoOrSpace("contact-info");
+					?>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>
