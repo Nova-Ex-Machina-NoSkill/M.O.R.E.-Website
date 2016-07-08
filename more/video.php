@@ -97,10 +97,6 @@
 				<video class="video-slider" controls="controls" poster="vid/posters/poster1.png">
 					<source src="vid/more-trailer.mp4" type="video/mp4" />
 					Your browser does not support the HTML 5.
-				</video>	
-				<video class="video-slider" controls="controls" poster="vid/posters/poster1.png">
-					<source src="vid/more-trailer.mp4" type="video/mp4" />
-					Your browser does not support the HTML 5.
 				</video>
 			</div>
 			<img id="left-arrow" src="vid/arrows/arrow-left.png" alt="arrow left" />
@@ -117,7 +113,7 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-		<script src="scr/main.min.js"></script>
+		<script src="scr/main.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

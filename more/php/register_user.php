@@ -28,15 +28,21 @@
 							$_SESSION['login_string'] = hash('sha512', $db['password'] . $_SERVER['HTTP_USER_AGENT']);
 							$_SESSION['time'] = time();
 							UpdateUserLogged(date("Y-m-d H:i:s", $_SESSION['time']), $id);
-							header('Location ../profile-data');
-						} else $_SESSION['register-info'] = "<div class='error'>Username or Email allready exists!</div>";
-					} else $_SESSION['register-info'] = "<div class='error'>Username must be between 2 and 32 characters!</div>";
-				} else $_SESSION['register-info'] = "<div class='error'>Password must be between 5 and 32 characters!</div>";
-			} else $_SESSION['register-info'] = "<div class='error'>Passwords does not match!</div>"; 
-		} else $_SESSION['register-info'] = "<div class='error'>Invalid recaptcha!</div>";
+							echo '<script type="text/javascript">'
+								, 'window.location.replace("http://www.morethegame.com/profile-data");'
+								, '</script/>';
+						} else $_SESSION['register-info'] = "<div class='error'>Username or Email allready exists!</div><br /><br />";
+					} else $_SESSION['register-info'] = "<div class='error'>Username must be between 2 and 32 characters!</div><br /><br />";
+				} else $_SESSION['register-info'] = "<div class='error'>Password must be between 5 and 32 characters!</div><br /><br />";
+			} else $_SESSION['register-info'] = "<div class='error'>Passwords does not match!</div><br /><br />"; 
+		} else $_SESSION['register-info'] = "<div class='error'>Invalid recaptcha!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		header('Location: ../register');
+		$_SESSION['register-info'] = "<div class='error'>Something went wrong!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>

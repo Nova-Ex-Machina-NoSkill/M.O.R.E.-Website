@@ -174,7 +174,7 @@
 
 			echo	"	<span id='support-label' class='label'>Support level: </span><span id='user-support' class='value'>{$db['level']}</span>
 						<span id='game-label' class='label'>Game version: </span><span id='game-name' class='value'>{$game['name']}</span>
-						<a href='donate' class='submit-button'><div id='donate-label'>UPGRADE</div></a>";
+						<a href='donate'><div id='donate-label' class='submit-button' >UPGRADE</div></a><br /><br /><br /><br /><br /><br /><br /><br /><br />";
 
 			echo	"	<div id='orders-rewards'>";
 

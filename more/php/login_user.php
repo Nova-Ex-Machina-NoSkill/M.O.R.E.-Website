@@ -18,12 +18,18 @@
 				$_SESSION['login_string'] = hash('sha512', $db['password'] . $_SERVER['HTTP_USER_AGENT']);
 				$_SESSION['time'] = time();
 				UpdateUserLogged(date("Y-m-d H:i:s", $_SESSION['time']), $db['id']);
-				header('Location ../profile-data');
-			} else $_SESSION['login-info'] = "<div class='error'>Wrong username or password!</div>";
-		} else $_SESSION['login-info'] = "<div class='error'>Wrong username or password!</div>";
+				echo '<script type="text/javascript">'
+					, 'window.location.replace("http://www.morethegame.com/profile-data");'
+					, '</script/>';
+			} else $_SESSION['login-info'] = "<div id='login-error' class='error'>Wrong username or password!</div><br /><br />";
+		} else $_SESSION['login-info'] = "<div id='login-error' class='error'>Wrong username or password!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		header('Location: ' . $_SERVER['HTTP_REFERER']);
+		$_SESSION['register-info'] = "<div class='error'>Something went wrong!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>

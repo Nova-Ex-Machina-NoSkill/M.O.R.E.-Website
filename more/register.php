@@ -95,7 +95,7 @@
 			<div id="main-header"><h4>Register</h4></div>
 			<div id="main-body">
 				<div id="container">
-					<form class="center-form" action="php/register_user.php" method="POST">
+					<form class="form-center" action="php/register_user.php" method="POST">
 						<label for="register-username">Username: </label>
 						<input id="register-username" name="register-username" type="text" /><br />
 						<label for="register-email">E-Mail: </label>
@@ -126,7 +126,7 @@
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
-		<script src="scr/main.min.js"></script>
+		<script src="scr/main.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

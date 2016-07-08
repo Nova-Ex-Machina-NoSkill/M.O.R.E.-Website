@@ -2,8 +2,9 @@
 	session_start();
 	require_once("php/Session.php");
 	if (!CheckIfAdminIsLogged()) {
-		if (isset($_SESSION['HTTP_REFERER'])) header('Location: ' . $_SERVER['HTTP_REFERER']);
-		else header('Location: start');
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+			, '</script/>';
 	}
 ?>
 <!DOCTYPE HTML>
@@ -115,7 +116,7 @@
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="scr/main.min.js"></script>
+		<script src="scr/main.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

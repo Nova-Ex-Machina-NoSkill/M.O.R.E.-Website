@@ -146,6 +146,8 @@ function SetGallery() {
     $('#left-arrow').on("click", PreviousSlide);
     $('#right-arrow').on("click", NextSlide);
     Slide = document.getElementsByClassName("slider");
+    console.log(Slide);
+    console.log("END");
     SetGalleryMiniatures();
     $(Slide[ThisSlide]).fadeIn();
     $(window).resize(SetBackground);

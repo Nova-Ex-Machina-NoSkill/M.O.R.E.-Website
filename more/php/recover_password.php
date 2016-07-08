@@ -7,12 +7,14 @@
 	try {
 		$db = GetUserEmailID($_POST['recover-password'], $_POST['recover-password']);
 		SetResetAndSendMailPassword($db['id'], $db['email']);
-		$_SESSION['password-info'] = "<div class='success'>Mail sent to: {$_POST['email']}</div>";
-		header('Location: ../recover-password');
+		$_SESSION['password-info'] = "<div class='success'>Mail sent to: {$_POST['email']}</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		$_SESSION['password-info'] = "<div class='error'>Mail not sent!</div>";
-		header('Location: ../recover-password');
+		$_SESSION['password-info'] = "<div class='error'>Mail not sent!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>

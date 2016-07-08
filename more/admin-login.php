@@ -1,7 +1,11 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
-	if (CheckIfAdminIsLogged()) header('Location: admin-panel');
+	if (CheckIfAdminIsLogged()) {
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("http://www.morethegame.com/admin-panel");'
+			, '</script/>';
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -119,7 +123,7 @@
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="scr/main.min.js"></script>
+		<script src="scr/main.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

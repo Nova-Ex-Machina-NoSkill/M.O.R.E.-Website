@@ -18,7 +18,7 @@
 		if (isset($_SESSION[$text])) {
 			echo $_SESSION[$text];
 			unset($_SESSION[$text]);
-		} else echo "<br /><br />";
+		}
 	}
 
 	function CheckLoginUser() {
@@ -73,11 +73,19 @@
 	}
 
 	function CheckIfUserIsLoged() {
-		return CheckLoginUser() && CheckSession() && CheckHijack();
+		if (CheckLoginUser() && CheckSession() && CheckHijack()) return true;
+		else {
+			EndSession();
+			return false;
+		}
 	}
 
 	function CheckIfAdminIsLogged() {
-		return CheckLoginAdmin() && CheckHijack();
+		if (CheckLoginAdmin() && CheckHijack()) return true;
+		else {
+			EndSession();
+			return false;
+		}
 	}
 
 	function EndSession() {

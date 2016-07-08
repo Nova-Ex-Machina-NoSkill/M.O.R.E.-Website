@@ -13,12 +13,14 @@
 		$street = filter_input(INPUT_POST, 'user-street', FILTER_SANITIZE_STRING);
 		$apartment = filter_input(INPUT_POST, 'user-apartment-number', FILTER_SANITIZE_STRING);
 		UpdateUserAddress($first_name, $last_name, $birth, $country, $state, $city, $postal_code, $street, $apartment, $_POST['id']);
-		$_SESSION['address-info'] = "<div class='success'>Address data updated!</div>";
-		header('Location ../admin-panel-profile');
+		$_SESSION['address-info'] = "<div class='success'>Address data updated!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		$_SESSION['address-info'] = "<div class='error'>Address data not updated!</div>";
-		header('Location ../admin-panel-profile');
+		$_SESSION['address-info'] = "<div class='error'>Address data not updated!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>

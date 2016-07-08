@@ -12,12 +12,14 @@
 		$street = filter_input(INPUT_POST, 'shipping-street', FILTER_SANITIZE_STRING);
 		$apartment = filter_input(INPUT_POST, 'shipping-apartment-number', FILTER_SANITIZE_STRING);
 		UpdateUserShipping($first_name, $last_name, $country, $state, $city, $postal_code, $street, $apartment, $_POST['id']);
-		$_SESSION['shipping-info'] = "<div class='success'>Shipping data updated!</div>";
-		header('Location ../admin-panel-profile');
+		$_SESSION['shipping-info'] = "<div class='success'>Shipping data updated!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		$_SESSION['shipping-info'] = "<div class='error'>Shipping data not updated!</div>";
-		header('Location ../admin-panel-profile');
+		$_SESSION['shipping-info'] = "<div class='error'>Shipping data not updated!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>

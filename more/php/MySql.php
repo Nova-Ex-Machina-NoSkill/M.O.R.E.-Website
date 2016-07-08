@@ -73,8 +73,8 @@
 	define("UPDATE_USER_RESET", "UPDATE users SET reset = ? WHERE id = ?");
 	define("UPDATE_USER_DATE", "UPDATE users SET date = ? WHERE id = ?");
 	define("UPDATE_USER_RESET_DATE", "UPDATE users SET reset = ?, date = ? WHERE id = ?");
-	define("UPDATE_USER_ADDRESS", "UPDATE users_address SET first_name, last_name, birth, country, state, city, postal, street, apartment WHERE id = ?");
-	define("UPDATE_USER_SHIPPING", "UPDATE users_shipping SET first_name, last_name, country, state, city, postal, street, apartment WHERE id = ?");
+	define("UPDATE_USER_ADDRESS", "UPDATE users_address SET first_name = ?, last_name = ?, birth = ?, country = ?, state = ?, city = ?, postal = ?, street = ?, apartment = ? WHERE id = ?");
+	define("UPDATE_USER_SHIPPING", "UPDATE users_shipping SET first_name = ?, last_name = ?, country = ?, state = ?, city = ?, postal = ?, street = ?, apartment = ? WHERE id = ?");
 	define("UPDATE_USER_SUPPORT", "UPDATE users_support SET level = ?, game = ?, orders = ? WHERE id = ?");
 	define("UPDATE_USER_STATS", "UPDATE users_stats SET id = ? WHERE id = ?");
 

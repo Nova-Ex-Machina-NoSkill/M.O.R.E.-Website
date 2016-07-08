@@ -16,12 +16,18 @@
 				$_SESSION['IPaddress'] = $_SERVER['REMOTE_ADDR'];
 				$_SESSION['userAgent'] = $_SERVER['HTTP_USER_AGENT'];
 				$_SESSION['login_string'] = hash('sha512', $db['password'] . $_SERVER['HTTP_USER_AGENT']);
-				header('Location: ../admin-panel');
-			} else $_SESSION['admin-login-info'] = "<div class='error'>Wrong username or password!</div>";
-		}
+				echo '<script type="text/javascript">'
+					, 'window.location.replace("http://www.morethegame.com/admin-panel");'
+					, '</script/>';
+			} else $_SESSION['admin-login-info'] = "<div class='error'>Wrong username or password!</div><br /><br />";
+		} else $_SESSION['admin-login-info'] = "<div class='error'>Wrong username or password!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		header('Location: ../admin-login');
+		$_SESSION['register-info'] = "<div class='error'>Something went wrong!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("http://www.morethegame.com/admin-login");'
+		, '</script/>';
 
 ?>

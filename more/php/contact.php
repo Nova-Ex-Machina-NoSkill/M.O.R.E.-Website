@@ -14,12 +14,15 @@
 		$resp = recaptcha_check_answer ($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
 		if ($resp->is_valid) {
 			mail($to, "<$email>", "$name:                $comment", "From: $email");
-			$_SESSION['contact-info'] = "<div class='error'>Mail sent!</div>";
-		} else $_SESSION['contact-info'] = "<div class='error'>Mail not sent!</div>";
-		header('Location: ../contact');
+			$_SESSION['contact-info'] = "<div class='error'>Mail sent!</div><br /><br />";
+		} else $_SESSION['contact-info'] = "<div class='error'>Mail not sent!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		header('Location: ../contact');
+		$_SESSION['register-info'] = "<div class='error'>Something went wrong!</div><br /><br />";
 	}
+
+	echo '<script type="text/javascript">'
+		, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+		, '</script/>';
 
 ?>
