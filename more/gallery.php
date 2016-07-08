@@ -1,6 +1,6 @@
 <?php
+	session_start();
 	require_once("php/Session.php");
-	StartSession();
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -93,7 +93,28 @@
 		</header>
 		<main>
 			<img id="slider-background" src="img/menu/background.png" alt="background" />
-			<div id="slider-container"></div>
+			<div id="slider-container">
+				<img class="slider" src="gallery/more1.png" alt="screenshot 1" />
+				<img class="slider" src="gallery/more2.png" alt="screenshot 2" />
+				<img class="slider" src="gallery/more3.png" alt="screenshot 3" />
+				<img class="slider" src="gallery/more4.png" alt="screenshot 4" />
+				<img class="slider" src="gallery/more5.png" alt="screenshot 5" />
+				<img class="slider" src="gallery/more6.png" alt="screenshot 6" />
+				<img class="slider" src="gallery/more7.png" alt="screenshot 7" />
+				<img class="slider" src="gallery/more8.png" alt="screenshot 8" />
+				<img class="slider" src="gallery/more9.png" alt="screenshot 9" />
+				<img class="slider" src="gallery/more10.png" alt="screenshot 10" />
+				<img class="slider" src="gallery/more11.png" alt="screenshot 11" />
+				<img class="slider" src="gallery/more12.png" alt="screenshot 12" />
+				<img class="slider" src="gallery/more13.png" alt="screenshot 13" />
+				<img class="slider" src="gallery/more14.png" alt="screenshot 14" />
+				<img class="slider" src="gallery/more15.png" alt="screenshot 15" />
+				<img class="slider" src="gallery/more16.png" alt="screenshot 16" />
+				<img class="slider" src="gallery/more17.png" alt="screenshot 17" />
+				<img class="slider" src="gallery/more18.png" alt="screenshot 18" />
+				<img class="slider" src="gallery/more19.png" alt="screenshot 19" />
+				<img class="slider" src="gallery/more20.png" alt="screenshot 20" />
+			</div>
 			<img id="left-arrow" src="gallery/arrows/arrow-left.png" alt="arrow left" />
 			<img id="right-arrow" src="gallery/arrows/arrow-right.png" alt="arrow right" />
 			<div id="miniature-container"></div>

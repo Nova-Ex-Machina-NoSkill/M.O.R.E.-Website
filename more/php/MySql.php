@@ -9,7 +9,7 @@
 	// Admin
 	define("ADMIN_HOST", "localhost");
 	define("ADMIN_USERNAME", "more_admin");
-	define("ADMIN_PASSWORD", "ZGKrSj6rEzJWmXVf");
+	define("ADMIN_PASSWORD", "yZWsAELSjd3ABznX");
 	define("ADMIN_DATABASE", "more");
 
 	// Session, Cookies, Domain, Secure, HTTP Only
@@ -39,11 +39,14 @@
 	define("GET_USER_ID", "SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1");
 	define("GET_USER_USERNAME", "SELECT username FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_EMAIL", "SELECT email FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_ID_EMAIL", "SELECT id, email FROM users WHERE username = ? OR email = ? LIMIT 1");
 	define("GET_USER_USERNAME_EMAIL", "SELECT username, email FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_PASSWORD", "SELECT password, salt FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_VERIFIED", "SELECT verified FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_BANNED", "SELECT banned FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_RESET", "SELECT reset FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_DATE", "SELECT date FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_RESET_DATE", "SELECT reset, date FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_ADDRESS", "SELECT first_name, last_name, birth, country, state, city, postal, street, apartment FROM users_address WHERE id = ? LIMIT 1");
 	define("GET_USER_SHIPPING", "SELECT first_name, last_name, country, state, city, postal, street, apartment FROM users_shipping WHERE id = ? LIMIT 1");
 	define("GET_USER_SUPPORT", "SELECT level, game, orders FROM users_support WHERE id = ? LIMIT 1");
@@ -52,7 +55,8 @@
 	define("GET_USERS_SEARCH", "SELECT id, username, email, created, logged, verified, banned FROM users ");
 
 	// GET
-	define("GET_ALL_COUNTRY", "SELECT iso, name FROM country WHERE ORDER BY id ASC");
+	define("GET_ALL_COUNTRY", "SELECT iso, name FROM country ORDER BY id ASC");
+	define("GET_COUNTRY_ID", "SELECT id FROM country WHERE iso = ? OR name = ? LIMIT 1");
 	define("GET_COUNTRY_ISO", "SELECT iso FROM country WHERE id = ? LIMIT 1");
 	define("GET_COUNTRY_NAME", "SELECT name FROM country WHERE id = ? LIMIT 1");
 	define("GET_ALL_GAME", "SELECT id, name FROM games ORDER BY id ASC");
@@ -67,6 +71,8 @@
 	define("UPDATE_USER_VERIFIED", "UPDATE users SET verified = ? WHERE id = ?");
 	define("UPDATE_USER_BANNED", "UPDATE users SET banned = ? WHERE id = ?");
 	define("UPDATE_USER_RESET", "UPDATE users SET reset = ? WHERE id = ?");
+	define("UPDATE_USER_DATE", "UPDATE users SET date = ? WHERE id = ?");
+	define("UPDATE_USER_RESET_DATE", "UPDATE users SET reset = ?, date = ? WHERE id = ?");
 	define("UPDATE_USER_ADDRESS", "UPDATE users_address SET first_name, last_name, birth, country, state, city, postal, street, apartment WHERE id = ?");
 	define("UPDATE_USER_SHIPPING", "UPDATE users_shipping SET first_name, last_name, country, state, city, postal, street, apartment WHERE id = ?");
 	define("UPDATE_USER_SUPPORT", "UPDATE users_support SET level = ?, game = ?, orders = ? WHERE id = ?");

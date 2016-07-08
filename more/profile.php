@@ -1,6 +1,11 @@
 <?php
+	session_start();
 	require_once("php/Session.php");
-	StartSession();
+	require_once("php/Profile.php");
+	if (!CheckIfUserIsLoged()) {
+		if (isset($_SESSION['HTTP_REFERER'])) header('Location: ' . $_SERVER['HTTP_REFERER']);
+		else header('Location: start');
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -94,9 +99,11 @@
 		<main>
 			<div id="main-header"><h4>Profile</h4></div>
 			<div id="main-body">
-				<?php
-					//ShowUserProfile();
-				?>
+				<div id="container">
+					<?php
+						ShowUserProfile();
+					?>
+				</div>
 			</div>
 			<div id="main-footer"></div>
 		</main>

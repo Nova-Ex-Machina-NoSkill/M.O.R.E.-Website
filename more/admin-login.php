@@ -1,6 +1,7 @@
 <?php
+	session_start();
 	require_once("php/Session.php");
-	StartSession();
+	if (CheckIfAdminIsLogged()) header('Location: admin-panel');
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

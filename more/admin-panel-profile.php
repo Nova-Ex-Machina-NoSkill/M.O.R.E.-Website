@@ -1,6 +1,10 @@
 <?php
+	session_start();
 	require_once("php/Session.php");
-	StartSession();
+	if (!CheckIfAdminIsLogged()) {
+		if (isset($_SESSION['HTTP_REFERER'])) header('Location: ' . $_SERVER['HTTP_REFERER']);
+		else header('Location: start');
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

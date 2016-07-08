@@ -1,6 +1,6 @@
 <?php
+	session_start();
 	require_once("php/Session.php");
-	StartSession();
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -93,10 +93,19 @@
 		</header>
 		<main>
 			<img id="slider-background" src="img/menu/background.png" alt="background" />
-			<div id="video-container"></div>
+			<div id="slider-container">
+				<video class="video-slider" controls="controls" poster="vid/posters/poster1.png">
+					<source src="vid/more-trailer.mp4" type="video/mp4" />
+					Your browser does not support the HTML 5.
+				</video>	
+				<video class="video-slider" controls="controls" poster="vid/posters/poster1.png">
+					<source src="vid/more-trailer.mp4" type="video/mp4" />
+					Your browser does not support the HTML 5.
+				</video>
+			</div>
 			<img id="left-arrow" src="vid/arrows/arrow-left.png" alt="arrow left" />
 			<img id="right-arrow" src="vid/arrows/arrow-right.png" alt="arrow right" />
-			<div id="miniature-container"><</div>
+			<div id="miniature-container"></div>
 		</main>
 		<footer>
 			<div id="social-footer">
