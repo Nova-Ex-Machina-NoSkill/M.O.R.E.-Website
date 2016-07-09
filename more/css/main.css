@@ -1041,6 +1041,15 @@ footer {
 	padding: 20px;
 }
 
+.form-center #update-username {
+	margin-left: 50px;
+	width: 200px;
+}
+
+.form-center #update-username-submit {
+	margin-top: -50px;
+}
+
 
 @media screen and (min-width: 1000px) {
 	#logo {

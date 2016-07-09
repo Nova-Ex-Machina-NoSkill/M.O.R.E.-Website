@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
+	if (isset($_SESSION['username']) && strlen($_SESSION['username']) < 2) {
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("http://www.morethegame.com/change-username");'
+			, '</script/>';
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -101,6 +106,9 @@
 						<div class="g-recaptcha" data-sitekey="6LcCpwsTAAAAAAAEHzelM4vmwvEDt4Qd0WRu3QrD"></div><br />
 						<input id="recover-submit" class="submit-button" type="submit" value="RECOVER" />
 					</form>
+					<?php
+						CheckIfInfoIsSetAndDisplayInfoOrSpace("password-info");
+					?>
 				</div>
 			</div>
 			<div id="main-footer"></div>

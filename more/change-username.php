@@ -1,6 +1,11 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
+	if (!isset($_SESSION['username']) || strlen($_SESSION['username']) > 1) {
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+			, '</script/>';
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

@@ -7,6 +7,11 @@
 			, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
 			, '</script/>';
 	}
+	if (isset($_SESSION['username']) && strlen($_SESSION['username']) < 2) {
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("http://www.morethegame.com/change-username");'
+			, '</script/>';
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">

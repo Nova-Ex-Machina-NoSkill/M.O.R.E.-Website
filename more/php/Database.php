@@ -204,7 +204,7 @@
 	function GetUserEmailID($username, $email) {
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
-			$stmt = $connection->prepare(GET_USER_EMAILS);
+			$stmt = $connection->prepare(GET_USER_ID_EMAIL);
 			$stmt->bind_param('ss', $username, $email);
 			$stmt->execute();
 			$stmt->bind_result($id, $email);

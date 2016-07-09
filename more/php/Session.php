@@ -134,14 +134,16 @@
 
 	function SendMailPassword($code, $email) {
 		$subject = "Password Change";
-		$message .= '<html><body>';
+		$message = '<html><body>';
 		$message .= '<h1>M.O.R.E.</h1><br />';
 		$message .= "<p>You're receiving this email because you requested a password reset for your M.O.R.E. Account. If you did not request this change, you can safely ignore this email.</p><br />";
 		$message .= '<p>To choose a new password and complete your request, please follow the link below:</p><br />';
-		$message .= '<h2><a href="http://www.morethegame.com/password_reset?code='.$code.'">http://www.morethegame.com/password_reset?code='.$code.'</a></h2><br />';
+		$message .= '<h2><a href="http://www.morethegame.com/password-reset?code='.$code.'">http://www.morethegame.com/password-reset?code='.$code.'</a></h2><br />';
 		$message .= "<p>If it is not clickable, please copy and paste the URL into your browser's address bar. The link above is valid for 24 hours.</p>";
 		$message .= '</body></html>';
-		mail("thomasfrost1994@outlook.com", $subject, $message);
+		$headers = "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		mail($email, $subject, $message, $headers);
 	}
 
 ?>

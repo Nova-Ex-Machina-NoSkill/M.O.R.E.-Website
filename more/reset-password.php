@@ -1,6 +1,12 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
+	require_once("php/Database.php");
+	if (isset($_SESSION['username']) && strlen($_SESSION['username']) < 2) {
+		echo '<script type="text/javascript">'
+			, 'window.location.replace("http://www.morethegame.com/change-username");'
+			, '</script/>';
+	}
 ?>
 <!DOCTYPE HTML>
 <html lang="en-US">
@@ -95,7 +101,44 @@
 			<div id="main-header"><h4>Reset</h4></div>
 			<div id="main-body">
 				<dic id="container">
-					
+					<?php
+						if (isset($_GET['code'])) {
+							try {
+								$random = DecodeRandom($_GET['code']);
+								$id = DecodeID($_GET['code']);
+								$db = GetUserResetDate($id);
+								$email = GetUserEmail($id);
+								$yesterday = time() - 24 * 60 * 60;
+								if ($db['date'] > date("YmdHis", $yesterday)) {
+									if ($db['reset'] == $random) {
+										$password = GenerateRandomString();
+										$salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
+										$hashPassword = hash('sha512', $password . $salt);
+										UpdateUserPassword($password, $salt, $id);
+										UpdateUserResetDate("", "", $id);
+										$subject = "Password Change";
+										$message = '<html><body>';
+										$message = '<h1>M.O.R.E.</h1>';
+										$message = '<p>We generated new password for you!</p>';
+										$message = "<h2>Password: $password</h2>";
+										$message .= '</body></html>';
+										$headers = "MIME-Version: 1.0\r\n";
+										$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+										mail($email['email'], $subject, $message, $headers);
+										echo "<div class='success'>We sent you email with new password!</div>";
+									} else echo "<div class'error'>Wrong code!</div>";
+								} else echo "<div class='error'>Link expired...</div>";
+							} catch(Exception $e) {
+								echo '<script type="text/javascript">'
+									, 'window.location.replace("http://www.morethegame.com/error");'
+									, '</script/>';
+							}
+						} else {
+							echo '<script type="text/javascript">'
+								, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+								, '</script/>';
+						}
+					?>
 				</div>
 			</div>
 			<div id="main-footer"></div>

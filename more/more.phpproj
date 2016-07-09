@@ -57,6 +57,7 @@
     <Compile Include="php\recover_username.php" />
     <Compile Include="php\register_user.php" />
     <Compile Include="php\Session.php" />
+    <Compile Include="php\update_username.php" />
     <Compile Include="php\UserUpdateAddress.php" />
     <Compile Include="php\UserUpdateEmail.php" />
     <Compile Include="php\UserUpdatePassword.php" />

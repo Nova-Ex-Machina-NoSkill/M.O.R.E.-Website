@@ -13,7 +13,9 @@
 		$message = '<p>We generated new password for you!</p>';
 		$message = "<h2>Password: $password</h2>";
 		$message .= '</body></html>';
-		mail($_POST['email'], $subject, $message);
+		$headers = "MIME-Version: 1.0\r\n";
+		$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
+		mail($_POST['email'], $subject, $message, $headers);
 		$_SESSION['password-info'] = "<div class='success'>Password updated!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
