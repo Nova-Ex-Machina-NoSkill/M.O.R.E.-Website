@@ -17,7 +17,7 @@
 				$_SESSION['userAgent'] = $_SERVER['HTTP_USER_AGENT'];
 				$_SESSION['login_string'] = hash('sha512', $db['password'] . $_SERVER['HTTP_USER_AGENT']);
 				echo '<script type="text/javascript">'
-					, 'window.location.replace("http://www.morethegame.com/admin-panel");'
+					, 'window.location.replace("http://www.morethegame.com/admin-panel-data");'
 					, '</script/>';
 			} else $_SESSION['admin-login-info'] = "<div class='error'>Wrong username or password!</div><br /><br />";
 		} else $_SESSION['admin-login-info'] = "<div class='error'>Wrong username or password!</div><br /><br />";

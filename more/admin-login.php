@@ -3,7 +3,7 @@
 	require_once("php/Session.php");
 	if (CheckIfAdminIsLogged()) {
 		echo '<script type="text/javascript">'
-			, 'window.location.replace("http://www.morethegame.com/admin-panel");'
+			, 'window.location.replace("http://www.morethegame.com/admin-panel-data");'
 			, '</script/>';
 	}
 ?>

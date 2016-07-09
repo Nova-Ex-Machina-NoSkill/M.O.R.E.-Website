@@ -1,7 +1,7 @@
 RewriteEngine on
 RewriteRule	^about					about.php					[NC,L]
 RewriteRule	^admin-login			admin-login.php				[NC,L]
-RewriteRule	^admin-panel			admin-panel.php				[NC,L]
+RewriteRule	^admin-panel-data		admin-panel.php				[NC,L]
 RewriteRule	^admin-panel-profile	admin-panel-profile.php		[NC,L]
 RewriteRule	^admin-panel-stats		admin-panel-stats.php		[NC,L]
 RewriteRule	^admin-panel-support	admin-panel-support.php		[NC,L]

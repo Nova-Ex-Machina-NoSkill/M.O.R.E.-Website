@@ -43,7 +43,7 @@
     <Compile Include="php\AdminUpdateStats.php" />
     <Compile Include="php\AdminUpdateSupport.php" />
     <Compile Include="php\AdminUpdateUsername.php" />
-    <Compile Include="php\contact.php" />
+    <Compile Include="php\send_email.php" />
     <Compile Include="php\Database.php" />
     <Compile Include="php\login_admin.php" />
     <Compile Include="php\login_user.php" />
@@ -81,7 +81,7 @@
     <Compile Include="war.php" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="gallery\arrows\" />
+    <Folder Include="img\screens\arrows\" />
     <Folder Include="img\" />
     <Folder Include="img\aliens\" />
     <Folder Include="img\aliens\borders\" />
@@ -94,7 +94,7 @@
     <Folder Include="img\orders\" />
     <Folder Include="logs\" />
     <Folder Include="css\" />
-    <Folder Include="gallery\" />
+    <Folder Include="img\screens\" />
     <Folder Include="img\preorder\" />
     <Folder Include="php\" />
     <Folder Include="vid\" />
@@ -105,29 +105,28 @@
   <ItemGroup>
     <Content Include=".htaccess" />
     <Content Include="css\main.css" />
-    <Content Include="css\main.min.css" />
-    <Content Include="gallery\arrows\arrow-left.png" />
-    <Content Include="gallery\arrows\arrow-right.png" />
-    <Content Include="gallery\more1.png" />
-    <Content Include="gallery\more10.png" />
-    <Content Include="gallery\more11.png" />
-    <Content Include="gallery\more12.png" />
-    <Content Include="gallery\more13.png" />
-    <Content Include="gallery\more14.png" />
-    <Content Include="gallery\more15.png" />
-    <Content Include="gallery\more16.png" />
-    <Content Include="gallery\more17.png" />
-    <Content Include="gallery\more18.png" />
-    <Content Include="gallery\more19.png" />
-    <Content Include="gallery\more2.png" />
-    <Content Include="gallery\more20.png" />
-    <Content Include="gallery\more3.png" />
-    <Content Include="gallery\more4.png" />
-    <Content Include="gallery\more5.png" />
-    <Content Include="gallery\more6.png" />
-    <Content Include="gallery\more7.png" />
-    <Content Include="gallery\more8.png" />
-    <Content Include="gallery\more9.png" />
+    <Content Include="img\screens\arrows\arrow-left.png" />
+    <Content Include="img\screens\arrows\arrow-right.png" />
+    <Content Include="img\screens\more1.png" />
+    <Content Include="img\screens\more10.png" />
+    <Content Include="img\screens\more11.png" />
+    <Content Include="img\screens\more12.png" />
+    <Content Include="img\screens\more13.png" />
+    <Content Include="img\screens\more14.png" />
+    <Content Include="img\screens\more15.png" />
+    <Content Include="img\screens\more16.png" />
+    <Content Include="img\screens\more17.png" />
+    <Content Include="img\screens\more18.png" />
+    <Content Include="img\screens\more19.png" />
+    <Content Include="img\screens\more2.png" />
+    <Content Include="img\screens\more20.png" />
+    <Content Include="img\screens\more3.png" />
+    <Content Include="img\screens\more4.png" />
+    <Content Include="img\screens\more5.png" />
+    <Content Include="img\screens\more6.png" />
+    <Content Include="img\screens\more7.png" />
+    <Content Include="img\screens\more8.png" />
+    <Content Include="img\screens\more9.png" />
     <Content Include="img\aliens\ameslarians.png" />
     <Content Include="img\aliens\arranos.png" />
     <Content Include="img\aliens\borders\ameslarians.png" />
@@ -324,10 +323,9 @@
     <Content Include="img\social\youtube-off.png" />
     <Content Include="img\social\youtube-on.png" />
     <Content Include="scr\main.js" />
-    <Content Include="scr\main.min.js" />
     <Content Include="vid\arrows\arrow-left.png" />
     <Content Include="vid\arrows\arrow-right.png" />
     <Content Include="vid\more-trailer.mp4" />
-    <Content Include="vid\posters\poster.png" />
+    <Content Include="vid\posters\poster1.png" />
   </ItemGroup>
 </Project>

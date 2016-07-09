@@ -14,7 +14,7 @@
 		$resp = recaptcha_check_answer ($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
 		if ($resp->is_valid) {
 			mail($to, "<$email>", "$name:                $comment", "From: $email");
-			$_SESSION['contact-info'] = "<div class='error'>Mail sent!</div><br /><br />";
+			$_SESSION['contact-info'] = "<div class='success'>Mail sent!</div><br /><br />";
 		} else $_SESSION['contact-info'] = "<div class='error'>Mail not sent!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());

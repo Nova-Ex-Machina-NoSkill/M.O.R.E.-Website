@@ -371,10 +371,10 @@
 
 			for($i = 1; $i < 38; $i++) {
 				if ($var < count($array) && $i == $array[$var]) {
-					echo	"	<img id='$i' class='ToggleIconsOnOff' src='img/icons/$i-on.png' alt='Order $i' />";
+					echo	"	<img id='$i' class='ToggleIconsOnOff' src='img/orders/$i-on.png' alt='Order $i' />";
 					$var++;
 				} else {
-					echo	"	<img id='$i' class='ToggleIconsOnOff' src='img/icons/$i-off.png' alt='Order $i' />";
+					echo	"	<img id='$i' class='ToggleIconsOnOff' src='img/orders/$i-off.png' alt='Order $i' />";
 				}
 			}
 
@@ -525,8 +525,8 @@
 			$stmt->execute();
 			$stmt->bind_result($id, $username, $email, $created, $logged, $verified, $banned);
 
-			echo	"	<div>
-							<form action='admin-panel' method='get'>
+			echo	"	<div id='data'>
+							<form action='admin-panel-data' method='get'>
 								<label for='amount'>Amount/Offset: </label>
 								<input id='amount' name='amount' type='number' value='$amount' />
 								<input id='offset' name='offset' type='number' value='$offset' /><br />
@@ -545,7 +545,7 @@
 						</div><br />";
 
 			echo	"	<div>
-							<table class='admin-panel-table'>
+							<table id='admin-panel-table'>
 								<tr>
 									<th>ID</th>
 									<th>Username</th>

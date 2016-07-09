@@ -98,9 +98,11 @@
 			</div>
 		</header>
 		<main>
-			<?php
-				ShowAdminPanel();
-			?>
+			<div id="panel-admin">
+				<?php
+					ShowAdminPanel();
+				?>
+			</div>
 		</main>
 		<footer>
 			<div id="social-footer">

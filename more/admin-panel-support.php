@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
+	require_once("php/Profile.php");
 	if (!CheckIfAdminIsLogged()) {
 		echo '<script type="text/javascript">'
 			, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
@@ -101,7 +102,7 @@
 			<div id="main-body">
 				<div id="container">
 					<?php
-						//ShowUserSupport($_GET['id']);
+						ShowAdminSupport($_GET['id']);
 					?>
 				</div>
 			</div>

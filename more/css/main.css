@@ -716,6 +716,12 @@ footer {
 	left: 20%;
 }
 
+#left-arrow, #right-arrow {
+	position: absolute;
+	top: 50%;
+	z-index: 100;
+}
+
 #left-arrow {
 	left: 10px;
 }
@@ -914,6 +920,7 @@ footer {
 	width: 400px;
 	height: 150px;
 	margin-bottom: 10px;
+	color: #000;
 }
 
 .form-center .submit-button {
@@ -951,6 +958,89 @@ footer {
 	width: 300px;
 	margin-bottom: 10px;
 }
+
+.container .success, .container .error {
+	margin: 10px 20px;
+}
+
+.form-center #admin-username {
+	margin-left: 50px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+.form-center #admin-password {
+	margin-left: 54px;
+	width: 200px;
+}
+
+.form-center #admin-submit {
+	margin-top: -60px;
+}
+
+#amount {
+	margin-left: 68px;
+	width: 100px;
+	margin-bottom: 10px;
+}
+
+#offset {
+	margin-left: 10px;
+	width: 100px;
+	margin-bottom: 10px;
+}
+
+#search-username {
+	margin-left: 100px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#search-email {
+	margin-left: 135px;
+	width: 300px;
+	margin-bottom: 10px;
+}
+
+#search-created-beg {
+	margin-left: 50px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#search-created-end {
+	margin-left: 10px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#search-logged-beg {
+	margin-left: 54px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#search-logged-end {
+	margin-left: 10px;
+	width: 200px;
+	margin-bottom: 10px;
+}
+
+#search-submit {
+	float: right;
+	margin-right: 50px;
+	margin-top: -70px;
+}
+
+#panel-admin label {
+	margin-left: 20px;
+}
+
+#admin-panel-table {
+	width: 100%;
+	padding: 20px;
+}
+
 
 @media screen and (min-width: 1000px) {
 	#logo {
@@ -1303,24 +1393,6 @@ footer {
 		padding: 0 0 10px 0;
 	}
 
-	#left-arrow, #right-arrow {
-		position: absolute;
-		top: 50%;
-		z-index: 100;
-	}
-
-	#left-arrow {
-		left: 10px;
-	}
-
-	#right-arrow {
-		right: 10px;
-	}
-
-	#slider-container:hover #left-arrow, #slider-container:hover #right-arrow {
-		display: block;
-	}
-
 	#miniature-container {
 		width: 100%;
 		height: 55px;
@@ -1330,6 +1402,7 @@ footer {
 		display: block;
 		background-color: rgba(75, 75, 75, 0.5);
 		z-index: 100;
+		text-align: center;
 	}
 	
 	.miniature {
