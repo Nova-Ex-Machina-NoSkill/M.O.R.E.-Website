@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
@@ -100,7 +101,7 @@
 			<img id="slider-background" src="img/menu/background.png" alt="background" />
 			<div id="slider-container">
 				<video class="video-slider" controls="controls" poster="vid/posters/poster1.png">
-					<source src="vid/more-trailer1.mp4" type="video/mp4" />
+					<source src="vid/trailer1.mp4" type="video/mp4" />
 					Your browser does not support the HTML 5.
 				</video>
 			</div>

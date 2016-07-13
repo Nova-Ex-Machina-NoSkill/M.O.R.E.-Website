@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	require_once("php/Session.php");
+	require_once("php/Database.php");
 	if (isset($_SESSION['username']) && strlen($_SESSION['username']) < 2) {
 		echo '<script type="text/javascript">'
 			, 'window.location.replace("http://www.morethegame.com/change-username");'
@@ -10,7 +11,7 @@
 <!DOCTYPE HTML>
 <html lang="en-US">
 	<head>
-		<title>M.O.R.E. - Government</title>
+		<title>M.O.R.E. - Reset Password</title>
 		<meta charset="UTF-8" />
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -98,15 +99,37 @@
 			</div>
 		</header>
 		<main>
-			<div id="main-header"><h4>Government</h4></div>
+			<div id="main-header"><h4>Reset</h4></div>
 			<div id="main-body">
 				<div id="container">
-					<div class="text-images">
-						<img class="left" src="img/screenshoots/gov1.png" alt="screenshot" />
-						<p>Management of your vast empire will be possible through an innovative approach unseen in other games of the genre. We will not rely on the automation of processes, which in time reduces gameplay to merely clicking the next turn button. Instead you will be able to discover and develop technologies assisting in management. As your empire grows and science progresses, you will be able to create building queues, and merge colonies of one star system into a super-colony called a Dyson Sphere. After further expansions and scientific developments, it will become possible even for these super-colonies (if they are close to each other) to be merged into clusters managed as one entity. Such clusters will have enormous industrial and scientific potential and will ensure that, no matter the scale of the game you're playing, every turn presents you with something to do without becoming bogged down in micromanagement.</p><br />
-						<img class="right" src="img/screenshoots/gov2.png" alt="screenshot" />
-						<p>M.O.R.E. will also pay special attention to such gaming aspects as mineral extraction, food transportation, raw materials, and people. It will contain leaders of the colonies, ship captains, spy masters, diplomats and scientists who will all have a significant impact on the course of the game, bringing into it their own stories, motivation and problems.</p><br />
-					</div>
+					<?php
+						if (isset($_GET['code'])) {
+							try {
+								$reset = DecodeRandom($_GET['code']);
+								$id = DecodeID($_GET['code']);
+								$date = DecodeDate($_GET['code']);
+								$db = GetUserResetEmailDate($id);
+								$email = GetUserEmailNew($id);
+								$yesterday = time() - 24 * 60 * 60;
+								if ($date > date("YmdHis", $yesterday)) {
+									if ($db['reset'] == $reset) {
+										UpdateUserEmail($email['email'], $id);
+										UpdateUserResetEmailDate("", "", $id);
+										echo "<div class='success'>Email updated!</div>";
+									} else echo "<div class='error'>Wrong code!</div>";
+								} else echo "<div class='error'>Link expired...</div>";
+							} catch(Exception $e) {
+								echo "<div class='error'>Where's code?</div>";
+								echo '<script type="text/javascript">'
+									, 'window.location.replace("http://www.morethegame.com/error");'
+									, '</script/>';
+							}
+						} else {
+							echo '<script type="text/javascript">'
+								, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+								, '</script/>';
+						}
+					?>
 				</div>
 			</div>
 			<div id="main-footer"></div>

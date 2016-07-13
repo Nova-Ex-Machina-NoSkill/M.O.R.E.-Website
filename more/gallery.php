@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="http://www.morethegame.com/css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="http://www.morethegame.com/img/menu/exit.png" alt="exit" />

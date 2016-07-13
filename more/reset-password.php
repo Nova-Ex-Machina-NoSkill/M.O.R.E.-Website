@@ -23,6 +23,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
@@ -100,35 +101,32 @@
 		<main>
 			<div id="main-header"><h4>Reset</h4></div>
 			<div id="main-body">
-				<dic id="container">
+				<div id="container">
 					<?php
 						if (isset($_GET['code'])) {
 							try {
-								$random = DecodeRandom($_GET['code']);
+								$reset = DecodeRandom($_GET['code']);
 								$id = DecodeID($_GET['code']);
+								$date = DecodeDate($_GET['code']);
 								$db = GetUserResetDate($id);
-								$email = GetUserEmail($id);
 								$yesterday = time() - 24 * 60 * 60;
-								if ($db['date'] > date("YmdHis", $yesterday)) {
-									if ($db['reset'] == $random) {
-										$password = GenerateRandomString();
-										$salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
-										$hashPassword = hash('sha512', $password . $salt);
-										UpdateUserPassword($password, $salt, $id);
-										UpdateUserResetDate("", "", $id);
-										$subject = "Password Change";
-										$message = '<html><body>';
-										$message = '<h1>M.O.R.E.</h1>';
-										$message = '<p>We generated new password for you!</p>';
-										$message = "<h2>Password: $password</h2>";
-										$message .= '</body></html>';
-										$headers = "MIME-Version: 1.0\r\n";
-										$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
-										mail($email['email'], $subject, $message, $headers);
-										echo "<div class='success'>We sent you email with new password!</div>";
-									} else echo "<div class'error'>Wrong code!</div>";
+								if ($date > date("YmdHis", $yesterday)) {
+									if ($db['reset'] == $reset) {
+										echo	"	<div>
+														<form class='form' action='php/update_password.php' method='post'>
+															<label for='user-new-password'>New Password: </label>
+															<input id='new-password' name='user-new-password' type='password' /><br />
+															<label for='user-new-password-repeat'>New Password: </label>
+															<input id='new-password' name='user-new-password-repeat' type='password' />
+															<input name='id' type='number' value='$id' style='display: none;' />
+															<input id='password-submit' class='submit-button' type='submit' value='UPDATE' />
+														</form>
+													</div><br />";
+										CheckIfInfoIsSetAndDisplayInfoOrSpace("password-info");
+									} else echo "<div class='error'>Wrong code!</div>";
 								} else echo "<div class='error'>Link expired...</div>";
 							} catch(Exception $e) {
+								echo "<div class='error'>Where's code?</div>";
 								echo '<script type="text/javascript">'
 									, 'window.location.replace("http://www.morethegame.com/error");'
 									, '</script/>';

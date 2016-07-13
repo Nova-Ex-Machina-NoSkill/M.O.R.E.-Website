@@ -95,7 +95,7 @@
 								<input id='first-name' name='user-first-name' type='text' value='{$db['first_name']}' placeholder='First name' />
 								<input id='last-name' name='user-last-name' type='text' value='{$db['last_name']}' placeholder='Last name' /><br />
 								<label for='user-birth-date'>Birth date: </label>
-								<input id='birth' name='user-birth-date' type='date' value='{$db['birth']}' /><br />
+								<input id='birth' name='user-birth-date' type='date' value='{$db['birth']}' placeholder='YYYY-MM-DD' /><br />
 								<label for='user-country'>Country: </label>
 								<select id='country' name='user-country'>";
 

@@ -17,6 +17,11 @@ var MiniatureWidth = 100;
 var MiniatureLength;
 var WindowWidth;
 
+function Close() {
+    var x = document.getElementById("login-message");
+    x.style.display = "none";
+}
+
 function Initiate() {
     SetToggle();
     SetToggleSubMenu();

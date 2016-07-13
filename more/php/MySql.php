@@ -39,18 +39,21 @@
 	define("GET_USER_ID", "SELECT id FROM users WHERE username = ? OR email = ? LIMIT 1");
 	define("GET_USER_USERNAME", "SELECT username FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_EMAIL", "SELECT email FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_EMAIL_NEW", "SELECT email_new FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_ID_EMAIL", "SELECT id, email FROM users WHERE username = ? OR email = ? LIMIT 1");
 	define("GET_USER_USERNAME_EMAIL", "SELECT username, email FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_PASSWORD", "SELECT password, salt FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_VERIFIED", "SELECT verified FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_BANNED", "SELECT banned FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_RESET", "SELECT reset FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_RESET_EMAIL", "SELECT reset_email FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_DATE", "SELECT date FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_RESET_DATE", "SELECT reset, date FROM users WHERE id = ? LIMIT 1");
+	define("GET_USER_RESET_EMAIL_DATE", "SELECT reset_email, date FROM users WHERE id = ? LIMIT 1");
 	define("GET_USER_ADDRESS", "SELECT first_name, last_name, birth, country, state, city, postal, street, apartment FROM users_address WHERE id = ? LIMIT 1");
 	define("GET_USER_SHIPPING", "SELECT first_name, last_name, country, state, city, postal, street, apartment FROM users_shipping WHERE id = ? LIMIT 1");
 	define("GET_USER_SUPPORT", "SELECT level, game, orders FROM users_support WHERE id = ? LIMIT 1");
-	define("GET_USER_STATS", "SELECT id FROM users_stats WHERE id = ? LIMIT 1");
+	define("GET_USER_STATS", "SELECT id FROM users_statistics WHERE user_id = ? LIMIT 1");
 	define("GET_USERS_INFO", "SELECT id, username, email, created, logged, verified, banned FROM users LIMIT 0, 50");
 	define("GET_USERS_SEARCH", "SELECT id, username, email, created, logged, verified, banned FROM users ");
 
@@ -66,24 +69,27 @@
 	// USER UPDATE
 	define("UPDATE_USER_USERNAME", "UPDATE users SET username = ? WHERE id = ?");
 	define("UPDATE_USER_EMAIL", "UPDATE users SET email = ? WHERE id = ?");
+	define("UPDATE_USER_EMAIL_NEW", "UPDATE users SET email_new = ? WHERE id = ?");
 	define("UPDATE_USER_PASSWORD", "UPDATE users SET password = ?, salt = ? WHERE id = ?");
 	define("UPDATE_USER_LOGGED", "UPDATE users SET logged = ? WHERE id = ?");
 	define("UPDATE_USER_VERIFIED", "UPDATE users SET verified = ? WHERE id = ?");
 	define("UPDATE_USER_BANNED", "UPDATE users SET banned = ? WHERE id = ?");
 	define("UPDATE_USER_RESET", "UPDATE users SET reset = ? WHERE id = ?");
+	define("UPDATE_USER_RESET_EMAIL", "UPDATE users SET reset_email = ? WHERE id = ?");
 	define("UPDATE_USER_DATE", "UPDATE users SET date = ? WHERE id = ?");
 	define("UPDATE_USER_RESET_DATE", "UPDATE users SET reset = ?, date = ? WHERE id = ?");
+	define("UPDATE_USER_RESET_EMAIL_DATE", "UPDATE users SET reset_email = ?, date = ? WHERE id = ?");
 	define("UPDATE_USER_ADDRESS", "UPDATE users_address SET first_name = ?, last_name = ?, birth = ?, country = ?, state = ?, city = ?, postal = ?, street = ?, apartment = ? WHERE id = ?");
 	define("UPDATE_USER_SHIPPING", "UPDATE users_shipping SET first_name = ?, last_name = ?, country = ?, state = ?, city = ?, postal = ?, street = ?, apartment = ? WHERE id = ?");
 	define("UPDATE_USER_SUPPORT", "UPDATE users_support SET level = ?, game = ?, orders = ? WHERE id = ?");
-	define("UPDATE_USER_STATS", "UPDATE users_stats SET id = ? WHERE id = ?");
+	define("UPDATE_USER_STATS", "UPDATE users_statistics SET user_id = ? WHERE id = ?");
 
 	// USER REGISTER
 	define("REGISTER_USER", "INSERT INTO users (username, email, password, salt, created, logged, verified) VALUES (?, ?, ?, ?, ?, ?, ?)");
 	define("REGISTER_USER_ADDRESS", "INSERT INTO users_address (id) VALUES (?)");
 	define("REGISTER_USER_SHIPPING", "INSERT INTO users_shipping (id) VALUES (?)");
 	define("REGISTER_USER_SUPPORT", "INSERT INTO users_support (id, level, game, orders) VALUES (?, ?, ?, ?)");
-	define("REGISTER_USER_STATS", "INSERT INTO users_stats (id) VALUES (?)");
+	define("REGISTER_USER_STATS", "INSERT INTO users_statistics (user_id) VALUES (?)");
 
 	function isSecure() {
 		return (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off') || $_SERVER['SERVER_PORT'] == 443;

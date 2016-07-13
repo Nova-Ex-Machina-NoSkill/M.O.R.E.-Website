@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
@@ -122,7 +123,7 @@
 			</div>
 		</footer>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-		<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+		<script src='https://www.google.com/recaptcha/api.js'></script>
 		<script src="scr/main.js"></script>
 		<script>
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

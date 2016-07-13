@@ -27,6 +27,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />

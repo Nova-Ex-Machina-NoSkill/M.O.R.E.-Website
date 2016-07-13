@@ -2,6 +2,7 @@
 
 	session_start();
 	require_once("Database.php");
+	require_once("Session.php");
 
 	try {
 		$old_password = filter_input(INPUT_POST, 'user-old-password', FILTER_SANITIZE_STRING);
@@ -15,6 +16,7 @@
 					$salt = hash('sha512', uniqid(mt_rand(1, mt_getrandmax()), true));
 					$password = hash('sha512', $password . $salt);
 					UpdateUserPassword($password, $salt, $_SESSION['id']);
+					SendMailPasswordChange($_SESSION['id']);
 					$_SESSION['login_string'] = hash('sha512', $password . $_SERVER['HTTP_USER_AGENT']);
 					$_SESSION['password-info'] = "<div class='success'>Password updated!</div><br /><br />";
 				} else $_SESSION['password-info'] = "<div class='error'>Wrong password!</div><br /><br />"; 

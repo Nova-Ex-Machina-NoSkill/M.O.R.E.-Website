@@ -22,6 +22,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
@@ -98,7 +99,7 @@
 		</header>
 		<main>
 			<video id="main-trailer" autoplay="autoplay" loop="loop" muted="muted">
-				<source src="vid/more-trailer.mp4" type="video/mp4" />
+				<source src="vid/trailer1.mp4" type="video/mp4" />
 				Your browser does not support the HTML 5.
 			</video>
 			<aside id="cs">

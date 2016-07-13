@@ -10,15 +10,18 @@
 		$username = filter_input(INPUT_POST, 'contact-name', FILTER_SANITIZE_STRING);
 		$email = filter_input(INPUT_POST, 'contact-email', FILTER_SANITIZE_EMAIL);
 		$comment = $_POST['contact-comment'];
-		$privatekey = "6LcCpwsTAAAAAO1RwS_FIoWQm1sqPZ4ngRzQdyeA";
-		$resp = recaptcha_check_answer ($privatekey, $_SERVER["REMOTE_ADDR"], $_POST["recaptcha_challenge_field"], $_POST["recaptcha_response_field"]);
-		if ($resp->is_valid) {
+		$captcha = $_POST['g-recaptcha-response'];
+		$secretKey = "6LcCpwsTAAAAAO1RwS_FIoWQm1sqPZ4ngRzQdyeA";
+		$ip = $_SERVER['REMOTE_ADDR'];
+		$response = file_get_contents("https://www.google.com/recaptcha/api/siteverify?secret=".$secretKey."&response=".$captcha."&remoteip=".$ip);
+		$responseKeys = json_decode($response, true);
+		if($responseKeys["success"] == 1) {	
 			mail($to, "<$email>", "$name:                $comment", "From: $email");
 			$_SESSION['contact-info'] = "<div class='success'>Mail sent!</div><br /><br />";
-		} else $_SESSION['contact-info'] = "<div class='error'>Mail not sent!</div><br /><br />";
+		} else $_SESSION['contact-info'] = "<div class='error'>Invalid Recaptcha!</div><br /><br />";
 	} catch(Exception $e) {
 		SaveLogToFile($e->getMessage());
-		$_SESSION['register-info'] = "<div class='error'>Something went wrong!</div><br /><br />";
+		$_SESSION['contact-info'] = "<div class='error'>Mail not sent!</div><br /><br />";
 	}
 
 	echo '<script type="text/javascript">'

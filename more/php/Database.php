@@ -45,12 +45,8 @@
 			$stmt = $connection->prepare(CHECK_USERNAME);
 			$stmt->bind_param('s', $username);
 			$stmt->execute();
-			$stmt->bind_result($id);
-			$stmt->fetch();
-			$result = array('id' => $id);
-			$stmt->close();
-			$connection->close();
-			return $result;
+			$stmt->store_result();
+			return $stmt->num_rows;
 		} catch(Exception $e) {
 			SaveLogToFile($e->getMessage());
 			return null;
@@ -63,30 +59,22 @@
 			$stmt = $connection->prepare(CHECK_EMAIL);
 			$stmt->bind_param('s', $email);
 			$stmt->execute();
-			$stmt->bind_result($id);
-			$stmt->fetch();
-			$result = array('id' => $id);
-			$stmt->close();
-			$connection->close();
-			return $result;
+			$stmt->store_result();
+			return $stmt->num_rows;
 		} catch(Exception $e) {
 			SaveLogToFile($e->getMessage());
 			return null;
 		}
 	}
 
-	function ChceckUsernameEmail($username, $email) {
+	function CheckUsernameEmail($username, $email) {
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
 			$stmt = $connection->prepare(CHECK_USERNAME_EMAIL);
 			$stmt->bind_param('ss', $username, $email);
 			$stmt->execute();
-			$stmt->bind_result($id);
-			$stmt->fetch();
-			$result = array('id' => $id);
-			$stmt->close();
-			$connection->close();
-			return $result;
+			$stmt->store_result();
+			return $stmt->num_rows;
 		} catch(Exception $e) {
 			SaveLogToFile($e->getMessage());
 			return null;
@@ -187,6 +175,24 @@
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
 			$stmt = $connection->prepare(GET_USER_EMAIL);
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($email);
+			$stmt->fetch();
+			$result = array('email' => $email);
+			$stmt->close();
+			$connection->close();
+			return $result;
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+			return null;
+		}
+	}
+
+	function GetUserEmailNew($id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(GET_USER_EMAIL_NEW);
 			$stmt->bind_param('i', $id);
 			$stmt->execute();
 			$stmt->bind_result($email);
@@ -309,6 +315,24 @@
 		}
 	}
 
+	function GetUserResetEmail($id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(GET_USER_RESET_EMAIL);
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($reset);
+			$stmt->fetch();
+			$result = array('reset' => $reset);
+			$stmt->close();
+			$connection->close();
+			return $result;
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+			return null;
+		}
+	}
+
 	function GetUserDate($id) {
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
@@ -331,6 +355,24 @@
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
 			$stmt = $connection->prepare(GET_USER_RESET_DATE);
+			$stmt->bind_param('i', $id);
+			$stmt->execute();
+			$stmt->bind_result($reset, $date);
+			$stmt->fetch();
+			$result = array('reset' => $reset, 'date' => $date);
+			$stmt->close();
+			$connection->close();
+			return $result;
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+			return null;
+		}
+	}
+
+	function GetUserResetEmailDate($id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(GET_USER_RESET_EMAIL_DATE);
 			$stmt->bind_param('i', $id);
 			$stmt->execute();
 			$stmt->bind_result($reset, $date);
@@ -571,6 +613,19 @@
 		}
 	}
 
+	function UpdateUserEmailNew($email, $id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(UPDATE_USER_EMAIL_NEW);
+			$stmt->bind_param('si', $email, $id);
+			$stmt->execute();
+			$stmt->close();
+			$connection->close();
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+		}
+	}
+
 	function UpdateUserPassword($password, $salt, $id) {
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
@@ -636,6 +691,19 @@
 		}
 	}
 
+	function UpdateUserResetEmail($reset, $id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(UPDATE_USER_RESET_EMAIL);
+			$stmt->bind_param('si', $reset, $id);
+			$stmt->execute();
+			$stmt->close();
+			$connection->close();
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+		}
+	}
+
 	function UpdateUserDate($date, $id) {
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
@@ -653,6 +721,19 @@
 		try {
 			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
 			$stmt = $connection->prepare(UPDATE_USER_RESET_DATE);
+			$stmt->bind_param('ssi', $reset, $date, $id);
+			$stmt->execute();
+			$stmt->close();
+			$connection->close();
+		} catch(Exception $e) {
+			SaveLogToFile($e->getMessage());
+		}
+	}
+
+	function UpdateUserResetEmailDate($reset, $date, $id) {
+		try {
+			$connection = @new mysqli(USER_HOST, USER_USERNAME, USER_PASSWORD, USER_DATABASE);
+			$stmt = $connection->prepare(UPDATE_USER_RESET_EMAIL_DATE);
 			$stmt->bind_param('ssi', $reset, $date, $id);
 			$stmt->execute();
 			$stmt->close();
@@ -719,7 +800,7 @@
 			$date = date("Y-m-d H:i:s");
 			$connection = @new mysqli(ADMIN_HOST, ADMIN_USERNAME, ADMIN_PASSWORD, ADMIN_DATABASE);
 			$stmt = $connection->prepare(REGISTER_USER);
-			$stmt->bind_param('ssss', $username, $email, $password, $salt, $date, $date, $verified);
+			$stmt->bind_param('ssssssi', $username, $email, $password, $salt, $date, $date, $verified);
 			$stmt->execute();
 			$stmt->close();
 			$connection->close();
@@ -754,11 +835,11 @@
 		}
 	}
 
-	function RegisterUserSupport($id, $level = 0, $game = 0, $orders = "") {
+	function RegisterUserSupport($id, $level = 0, $game = 1, $orders = "") {
 		try {
 			$connection = @new mysqli(ADMIN_HOST, ADMIN_USERNAME, ADMIN_PASSWORD, ADMIN_DATABASE);
 			$stmt = $connection->prepare(REGISTER_USER_SUPPORT);
-			$stmt->bind_param('iiis', $id);
+			$stmt->bind_param('iiis', $id, $level, $game, $orders);
 			$stmt->execute();
 			$stmt->close();
 			$connection->close();
@@ -783,10 +864,10 @@
 	function Register($username, $email, $password, $salt, $verified = 1) {
 		RegisterUser($username, $email, $password, $salt, $verified);
 		$id = GetUserId($username, $email);
-		RegisterUserAddress($id);
-		RegisterUserShipping($id);
-		RegisterUserSupport($id);
-		RegisterUserStats($id);
+		RegisterUserAddress($id['id']);
+		RegisterUserShipping($id['id']);
+		RegisterUserSupport($id['id']);
+		RegisterUserStats($id['id']);
 	}
 
 ?>

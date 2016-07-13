@@ -68,6 +68,7 @@ p {
 
 input {
 	color: #000;
+	text-indent: 2px;
 }
 
 a {
@@ -102,11 +103,13 @@ label {
 .success {
 	color: green;
 	margin: auto;
+	font-size: 18px;
 }
 
 .error {
 	color: red;
 	margin: auto;
+	font-size: 18px;
 }
 
 #cookies {
@@ -193,6 +196,7 @@ nav ul li {
 
 #login-error {
 	width: 160px;
+	font-size: 14px;
 }
 
 #register-button {
@@ -279,7 +283,7 @@ nav ul li {
 }
 
 #login-form input {
-	width: 155px;
+	width: 163px;
 }
 
 #username-email {
@@ -291,7 +295,7 @@ nav ul li {
 }
 
 #login-submenu a {
-	margin-left: 65px;
+	margin-left: 72px;
 }
 
 footer {
@@ -381,11 +385,14 @@ footer {
 
 .race h2 {
 	text-align: center;
+	margin-bottom: 0;
+	padding-bottom: 0;
 }
 
 .race ul li p {
 	text-align: center;
-	margin: 5px 0 10px 0;
+	margin: 0;
+	padding: 2px 0 10px 0;
 }
 
 #ameslarians {
@@ -959,8 +966,8 @@ footer {
 	margin-bottom: 10px;
 }
 
-.container .success, .container .error {
-	margin: 10px 20px;
+#container .success, #container .error {
+	padding: 20px !important;
 }
 
 .form-center #admin-username {
@@ -1047,9 +1054,36 @@ footer {
 }
 
 .form-center #update-username-submit {
-	margin-top: -50px;
+	margin-top: -40px;
 }
 
+#login-message {
+	width: 300px;
+	height: 40px;
+	position: fixed;
+	z-index: 100;
+	left: calc(50% - 150px);
+	top: 300px;
+	background-color: #17273F;
+	border: 1px groove #F8CF58;
+}
+
+#login-message p {
+	color: red;
+	margin: 10px;
+	padding: 0;
+}
+
+#login-message img {
+	float: right;
+	position: absolute;
+	right: 10px;
+	top: 5px;
+}
+
+#login-message img:after {
+	clear: both;
+}
 
 @media screen and (min-width: 1000px) {
 	#logo {
@@ -1285,7 +1319,6 @@ footer {
 	}
 
 	.race {
-		min-height: 275px;
 		margin: 0 0 50px 0;
 		border-top: 24px solid transparent;
 		border-bottom: 24px solid transparent;
@@ -1296,20 +1329,34 @@ footer {
 
 	.race img {
 		float: left;
-		margin: 72px 20px 20px 20px;
+		margin: 0 20px 20px 20px;
 	}
 
 	.race ul {
 		text-align: center;
+		width: calc(100% - 240px);
+		margin-left: 240px !important;
 	}
 
 	.race ul li {
-		width: 300px;
+		width: 250px;
+		height: 80px;
 		display: inline-block;
 	}
 
 	.race ul li p {
-		margin: 10px 0 0 0;
+		margin: 0;
+	}
+
+	.race h1 {
+		text-align: left;
+		font-size: 54px;
+		padding: 0 !important;
+		margin-bottom: 0;
+	}
+
+	.race > p {
+		margin-top: 0;
 	}
 
 	#ameslarians {
@@ -1471,7 +1518,7 @@ footer {
 	}
 
 	.small {
-		width: 350px;
+		width: 350p;
 	}
 
 	.preorder ul li:nth-child(2n) {
@@ -1484,9 +1531,20 @@ footer {
 
 	.preorder ul li p {
 		height: 75px;
+		padding-bottom: 5px;
+	}
+
+	.preorder ul li h1 {
+		padding: 0;
+		margin-bottom: 10px;
+	}
+
+	.preorder ul li input {
+		padding-bottom: 20px;
 	}
 
 	#preorder-center {
 		margin: auto;
+		padding-bottom: 20px;
 	}
 }

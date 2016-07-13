@@ -4,7 +4,7 @@
 	require_once("php/Profile.php");
 	if (!CheckIfUserIsLoged()) {
 		echo '<script type="text/javascript">'
-			, 'window.location.replace("'.$_SERVER['HTTP_REFERER'].'");'
+			, 'window.location.replace("http://www.morethegame.com/start");'
 			, '</script/>';
 	}
 	if (isset($_SESSION['username']) && strlen($_SESSION['username']) < 2) {
@@ -28,6 +28,7 @@
 		<link rel="stylesheet" href="css/main.css" type="text/css" />
 	</head>
 	<body>
+		<div id='login-error'></div>
 		<header>
 			<div id="cookies">
 				<img class="float-right" onclick="AllowCookies()" src="img/menu/exit.png" alt="exit" />
